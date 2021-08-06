@@ -1,0 +1,20 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifiers": {
+    "attribute": "minecraft:generic.attack_damage",
+    "operation": "addition_base",
+    "value": 5
+  },
+  "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient":{
+            "tag": "penglin:ocean_weapons"
+            }
+          }
+      },
+  "name": "Oceans Might",
+  "description": "Killing the Dragon has honed your skills with weapons from the ocean."
+}

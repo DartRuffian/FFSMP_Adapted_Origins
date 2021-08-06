@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		"mcdw:sword_coral_blade",
+		"mcdw:bow_guardian_bow",
+		"mcdw:axe_anchor",
+		"mcdw:axe_encrusted_anchor",
+		"mcdw:sword_sponge_striker",
+		"mcdw:crossbow_nautical_crossbow",
+		"mcdw:crossbow_harpoon_crossbow",
+		"minecraft:trident"
+	]
+}
