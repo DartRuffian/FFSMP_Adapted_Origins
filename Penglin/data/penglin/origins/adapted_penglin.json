@@ -9,7 +9,8 @@
 		"penglin:piscivore_adapt",
 		"penglin:overheat",
 		"penglin:smol_peng",
-		"penglin:icy_aura"
+		"penglin:icy_aura",
+		"penglin:oceans_might"
 	],
 	"icon": "minecraft:blue_ice",
 	"order": 10,
