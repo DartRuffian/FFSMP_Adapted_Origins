@@ -1,5 +1,5 @@
 {
-		"type": "origins:active_self",
+		"type": "origins:action_over_time",
 		"entity_action": {
 			"type": "origins:if_else",
 			"condition": {
@@ -38,8 +38,5 @@
 					"permission_level": 4
 			}
 		},
-		"hud_render": {
-		"should_render": false
-		},
-		"cooldown": 0
+		"interval": 1
 }
