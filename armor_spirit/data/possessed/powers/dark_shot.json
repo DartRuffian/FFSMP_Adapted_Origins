@@ -1,0 +1,16 @@
+{
+    "type": "origins:fire_projectile",
+    "entity_type": "minecraft:arrow",
+    "cooldown": 1200,
+    "hud_render": {
+        "should_render": true
+    },
+    "tag": "{pickup:0b,CustomPotionEffects:[{Id:15,Duration:10,ShowParticles:0},{Id:16,Duration:10,ShowParticles:0},{Id:2,Duration:10,ShowParticles:0}]}",
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": false
+    },
+	"hidden": false,
+    "name": "Dark shot",
+    "description": "you can fire a shot of dark energy blinding your enemy, making it harder for them to move"
+}

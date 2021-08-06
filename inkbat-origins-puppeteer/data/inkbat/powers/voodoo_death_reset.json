@@ -1,0 +1,88 @@
+{
+	"hidden": true,
+	"name": "Resets on Death",
+	"description": "Clears puppet and target when the player dies.",
+	
+	"type": "origins:multiple",
+	
+	"time_since_death_scoreboard": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:execute_command",
+			"command": "scoreboard objectives add TimeSinceDeath minecraft.custom:minecraft.time_since_death",
+			"permission_level": 2
+		},
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "scoreboard objectives add TimeSinceDeath minecraft.custom:minecraft.time_since_death",
+			"permission_level": 2
+		}
+	},
+	
+	"kill_puppet": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @e[tag=VoodooDoll] if score @s UUID_1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s UUID_2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s UUID_3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s UUID_4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run forceload remove ~ ~ ~ ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=VoodooDoll] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run kill @s",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "scoreboard players get @s TimeSinceDeath",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	
+	"clear_victim": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "scoreboard players get @s TimeSinceDeath",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	}
+}

@@ -1,0 +1,11 @@
+  
+{
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+      "name": "Sleek Body",
+      "value": 0.1,
+      "operation": "addition"
+    },
+    "name": "Sleek Body",
+    "description": "Being a Zora means you can swim fast. You can swim really fast."
+  }

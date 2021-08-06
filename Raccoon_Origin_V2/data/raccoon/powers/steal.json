@@ -1,0 +1,88 @@
+{
+	"type": "origins:self_action_on_hit",
+	"entity_action": {
+    "type":"origins:and",
+    "actions":[
+        {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function raccoon:steal",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 2,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function raccoon:steal2",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 3,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "tag @e[type=item] remove dropped",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 4,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "replaceitem entity @e[tag=stolen] weapon.mainhand air",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "inverted": false,
+    "conditions": [
+        {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                     "type": "origins:ingredient",
+                     "ingredient": {
+                     "item": "minecraft:air"
+                                 }
+                            }
+        }
+    ]   
+},
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 1
+	},
+	"cooldown": 600,
+	"name": "Snatch",
+	"description": "you have gained a nack for grabing things right out of peoples hands"
+}

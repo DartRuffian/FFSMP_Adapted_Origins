@@ -1,0 +1,19 @@
+{
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "name": "Extra Reach block reach",
+        "attribute": "reach-entity-attributes:reach",
+        "value": 1.15,
+        "operation": "addition"
+      },
+      {
+        "name": "Extra Reach entity reach",
+        "attribute": "reach-entity-attributes:attack_range",
+        "value": 1.15,
+        "operation": "addition"
+      }
+    ],
+    "name": "Tall Advantage",
+    "description": "Since you're a bit taller as a Gerudo, you can reach a bit farther."
+  }

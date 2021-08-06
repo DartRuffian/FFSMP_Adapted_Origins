@@ -1,0 +1,1351 @@
+{
+	"name": "Potion Voodoo",
+	"description": "By giving the voodoo doll a potion or its ingredient to hold, it will grant the target the corresponding potion effect. Giving it a spectral arrow will give the target the glowing effect. Giving it a shulker shell will give the target the levitation effect.",
+	
+	"type": "origins:multiple",
+	
+	"glowing": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s glowing 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s glowing",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:glowing_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"speed_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s speed 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s speed",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"speed_2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s speed 2 1 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s speed",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:speed_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"slowness_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s slowness 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s slowness",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"slowness_4": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s slowness 2 3 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s slowness",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowness_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"leaping_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s jump_boost 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s jump_boost",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"leaping_2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s jump_boost 2 1 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s jump_boost",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:leaping_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"strength_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s strength 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s strength",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"strength_2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s strength 2 1 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s strength",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:strength_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"poison_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s poison 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s poison",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"poison_2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s poison 2 1 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s poison",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:poison_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"regeneration_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s regeneration 3 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s regeneration",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"regeneration_2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s regeneration 3 1 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s regeneration",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:regen_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"fire_resistance": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s fire_resistance 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s fire_resistance",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:fireres_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"water_breathing": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s water_breathing 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s water_breathing",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:waterb_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"night_vision": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s night_vision 12 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s night_vision",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:nightv_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"invisibility": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s invisibility 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s invisibility",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:invis_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"turtle_master_1": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s slowness 2 3 true",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s resistance 2 2 true",
+					"permission_level": 2
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s slowness",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s resistance",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"turtle_master_2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s slowness 2 5 true",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s resistance 2 3 true",
+					"permission_level": 2
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s slowness",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s resistance",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_strong_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_strong_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_strong_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:turtlem_strong_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"slow_falling": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s slow_falling 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s slow_falling",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:slowfall_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"weakness": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s weakness 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s weakness",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_normal_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_normal_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_normal_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_normal_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_long_arrow] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_long_drink] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_long_splash] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:weakness_long_linger] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		}
+	},
+	
+	"levitation": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect give @s levitation 2 0 true",
+			"permission_level": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run effect clear @s levitation",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:levitation_ingredient] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+			"comparison": "==",
+			"compare_to": "1"
+		}
+	}
+}

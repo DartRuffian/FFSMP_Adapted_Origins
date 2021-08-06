@@ -1,0 +1,63 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "name": "Icy Advantage",
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.14,
+      "operation": "addition"
+    },
+    "tick_rate": 100,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:frozen_ocean"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:deep_frozen_ocean"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:cold_ocean"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:deep_cold_ocean"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:frozen_river"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:snowy_beach"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:snowy_taiga"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:snowy_taiga_hills"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:snowy_taiga_mountains"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:snowy_mountains"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:ice_spikes"
+          }
+      ]
+
+
+    },
+    "name": "Snow Speed",
+    "description": "Your feathers make you ok in the snow, and you go really fast in snow."
+}

@@ -1,0 +1,28 @@
+{
+    "type": "origins:action_over_time",
+     "entity_action":
+            {
+            "type": "origins:and",
+            "actions": [
+            {
+                "type":"origins:heal",
+                "amount": 1
+              }
+                       ]
+              },
+            "condition": {
+                "type": "origins:and",
+                "conditions":[
+                    {
+                        "type": "origins:exposed_to_sun"
+                      },
+                    {
+                        "type": "origins:moving",
+                        "inverted":true
+                      }
+                       ]
+          },
+    "interval": 40,
+    "name": "Sky blessing",
+    "description": "If you stay still, sunlight will slowly heal you."
+}

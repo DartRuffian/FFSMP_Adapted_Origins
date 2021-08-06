@@ -1,0 +1,23 @@
+{
+"type": "origins:invisibility",
+"render_armor": false,
+"condition": {
+"type": "origins:and",
+"conditions": [
+		{
+		"type": "origins:power_active",
+		"power": "raccoon:sneaky"
+		},
+		{    
+		"type": "origins:sneaking"
+		}, 
+		{
+		"type": "origins:brightness",
+		"comparison": "<",
+		"compare_to": "0.6"
+		}
+	]
+},
+   "name": "Scavenger",
+   "description": "You have mastered the art of scavenging you get slightly better loot."
+}

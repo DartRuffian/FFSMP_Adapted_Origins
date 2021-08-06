@@ -1,0 +1,11 @@
+  {
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "Metal Plating",
+      "attribute": "minecraft:generic.max_health",
+      "value": 20.0,
+      "operation": "addition"
+    },
+    "name": "Giant Ancient Core",
+    "description": "Being a guardian means you have a lot of health. Double a normal person, in fact."
+  }

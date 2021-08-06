@@ -1,0 +1,36 @@
+{
+    "type": "origins:stacking_status_effect",
+    "description": "You gain extreme buffs when shrouded with darkness.",
+    "name": "Shadow Riata",
+    "hidden": false,
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 30,
+    "effects": [{
+        "duration": 2,
+        "is_ambient": false,
+        "show_particles": false,
+        "show_icon": true,
+        "effect": "minecraft:strength",
+		    "amplifier": 1
+    },
+    {
+		"duration": 2,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true,
+		"effect":"minecraft:speed"
+	  },
+    {
+		"duration": 2,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true,
+		"effect":"minecraft:regeneration"
+	}],
+	
+	"condition": {
+		"type":"origins:exposed_to_sun",
+		"inverted": true
+	}
+}

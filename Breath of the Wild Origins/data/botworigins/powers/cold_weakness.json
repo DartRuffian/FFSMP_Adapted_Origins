@@ -1,0 +1,65 @@
+{
+    "type": "origins:damage_over_time",
+    "interval": 20,
+    "onset_delay": 1,
+    "damage": 2,
+    "damage_source": {
+        "name": "hurt_by_water",
+        "unblockable": true,
+        "bypasses_armor": true
+    },
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:frozen_ocean"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:deep_frozen_ocean"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:cold_ocean"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:deep_cold_ocean"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:frozen_river"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:snowy_beach"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:snowy_taiga"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:snowy_taiga_hills"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:snowy_taiga_mountains"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:snowy_mountains"
+            },
+            {
+              "type": "origins:biome",
+              "biome": "minecraft:ice_spikes"
+            }
+        ]
+  
+  
+      },
+      "name": "Shivering",
+      "description": "You take damage in any snowy biome."
+
+    }

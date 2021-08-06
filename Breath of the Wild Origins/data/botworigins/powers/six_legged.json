@@ -1,0 +1,12 @@
+  
+{
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "Six Legged",
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.05,
+      "operation": "addition"
+    },
+    "name": "Six Legged",
+    "description": "Having six legs mean you can move really quickly to chase down your foes."
+  }

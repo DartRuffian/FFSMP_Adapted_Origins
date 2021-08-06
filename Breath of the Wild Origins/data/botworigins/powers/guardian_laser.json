@@ -1,0 +1,15 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function botworigins:guardian_laser",
+      "permission_level": 4
+      },
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": false,
+      "bar_index": 6
+    },
+    "name": "Guardian Laser",
+    "description": "You can shoot a powerful laser. *cue guardian music*"
+  }

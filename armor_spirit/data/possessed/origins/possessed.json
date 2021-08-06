@@ -1,0 +1,22 @@
+{
+	"powers": [
+	        "possessed:invisable",
+			"possessed:armor",
+			"possessed:burns",
+			"possessed:blast",
+			"possessed:dark_shot",
+			"possessed:speed",
+			"possessed:nat_armor",
+			"possessed:soul_fist",
+			"possessed:soul_fist2"
+	],
+	"icon": "minecraft:netherite_chestplate",
+	"order": 6,
+	"impact": 2,
+        "name": "possessed armor",
+        "description": "A strong soul barely held together by armor",
+			"upgrades":{
+        "condition": "minecraft:end/kill_dragon",
+        "origin": "possessed:adapted_possessed",
+        "announcement": "You have evolved... Best check your origin again...(wip)"}
+}

@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_jump",
+    "modifier": {
+        "value": 0.15,
+        "operation": "addition"
+    },
+    "name": "Parkour Warrior",
+    "description": "You are able to jump two blocks high as a result of your ninja training."
+}

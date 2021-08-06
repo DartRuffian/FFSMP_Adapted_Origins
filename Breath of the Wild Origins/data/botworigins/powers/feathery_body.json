@@ -1,0 +1,67 @@
+  
+{
+  "type": "origins:burn",
+  "interval": 20,
+  "burn_duration": 6,
+  "condition": {
+      "type": "origins:or",
+      "conditions": [
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:savanna"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:savanna_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:shattered_savanna"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:shattered_savanna_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:desert"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:desert_hills"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:desert_lakes"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:badlands"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:modified_badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:wooded_badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:modified_wooded_badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:eroded_badlands"
+          }
+      ]
+
+
+    },
+    "name": "Feathery Body",
+    "description": "Your feathers aren't all good. You will burn up in warm biomes."
+}

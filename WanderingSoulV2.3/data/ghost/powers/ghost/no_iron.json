@@ -1,0 +1,30 @@
+{
+    "type": "origins:restrict_armor",
+    "name": "A Fool's Curse",
+    "description": "You are unable to wear iron, gold and diamond armor.",
+    "hidden": false,
+    "head": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_helmet"
+	}
+    },
+    "chest": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_chestplate"
+	}
+    },
+    "legs": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_leggings"
+	}
+    },
+    "feet": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_boots"
+	}		
+    }
+}

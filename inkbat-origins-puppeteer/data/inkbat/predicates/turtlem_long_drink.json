@@ -1,0 +1,13 @@
+{
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:armor_stand",
+		"equipment": {
+			"mainhand": {
+				"item": "minecraft:potion",
+				"potion": "minecraft:long_turtle_master"
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"name": "Picky Preferences",
+	"description": "You can only eat raw meat. You refuse to consume cooked meat, vegetables, milk, and potions.",
+	
+	"type": "origins:multiple",
+	
+	"cannot_eat_cooked_meat": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "inkbat:cooked_meat"
+			}
+		}
+	},
+	
+	"block_other_consumables": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "inkbat:other_consumables"
+			}
+		}
+	},
+	
+	"no_cake_for_u": {
+		"type": "origins:prevent_block_use",
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:cake"
+		}
+	}
+}

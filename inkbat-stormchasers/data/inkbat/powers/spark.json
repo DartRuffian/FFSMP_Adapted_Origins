@@ -1,0 +1,88 @@
+{
+	"name": "Spark",
+	"description": "Every damage you take has a 20% chance of setting you on fire if you're not fully charged. This rises to 100% if you are.",
+	
+	"type": "origins:multiple",
+	
+	"while_charged": {
+		"type": "origins:self_action_when_hit",
+		"entity_action": {
+			"type": "origins:set_on_fire",
+			"duration": 3
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:on_fire",
+					"inverted": true
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:static_discharge_charge_cooldown",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:static_discharge_player_hits_ground_entity",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:static_discharge_ground_entity_hits_player",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	
+	"not_charged": {
+		"type": "origins:self_action_when_hit",
+		"entity_action": {
+			"type": "origins:chance",
+			"action": {
+				"type": "origins:set_on_fire",
+				"duration": 3
+			},
+			"chance": 0.2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:on_fire",
+					"inverted": true
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:static_discharge_charge_cooldown",
+					"comparison": "<",
+					"compare_to": 600
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:static_discharge_player_hits_ground_entity",
+					"comparison": "<",
+					"compare_to": 600
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:static_discharge_ground_entity_hits_player",
+					"comparison": "<",
+					"compare_to": 600
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	}
+}

@@ -1,0 +1,2 @@
+execute if data entity @e[tag=stolen,limit=1,sort=nearest] SelectedItem run summon item ~ ~ ~ {Item:{id:"minecraft:stone",Count:1b},Tags:["dropped"],PickupDelay:5}
+playsound minecraft:entity.vex.charge player @p[tag=raccoon] ~ ~ ~ 3 2

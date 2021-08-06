@@ -1,0 +1,10 @@
+{
+  "type": "origins:modify_break_speed",
+  "modifier": {
+    "value": 1.5,
+    "operation": "multiply_base"
+  },
+  "hidden": true,
+  "name": "Fast Digger",
+  "description": "You break blocks faster than others."
+}

@@ -1,0 +1,241 @@
+{
+	"name": "Voodoo Doll",
+	"description": "Use G to summon a voodoo doll at your location. Right click the doll to give it an item to hold or to take an item back. If the doll is holding an item, hitting G will teleport the doll to you instead of removing the doll.",
+	
+	"type": "origins:multiple",
+	
+	"visual": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 21
+		}
+	},
+	
+	"detect_doll_existence": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_doll_visual",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_doll_visual",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "execute at @s as @e[tag=VoodooDoll] if score @p[tag=Puppeteer] UUID_1 = @s PuppetOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s PuppetOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s PuppetOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s PuppetOwnerUUID4",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	
+	"target_lock_visual": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/resource_bar.png",
+			"bar_index": 3
+		}
+	},
+	
+	"detect_target": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_doll_target_lock_visual",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_doll_target_lock_visual",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4",
+			"comparison": ">=",
+			"compare_to": 1
+		}
+	},
+	
+	"summon_and_destroy_voodoodoll": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:command",
+						"command": "execute at @s as @e[tag=VoodooDoll] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+						"comparison": "==",
+						"compare_to": 0
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "execute as @s at @e[tag=VoodooDoll] if score @s UUID_1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s UUID_2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s UUID_3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s UUID_4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run forceload remove ~ ~ ~ ~",
+						"permission_level": 2
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s as @e[tag=VoodooDoll] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 unless data entity @s HandItems[0].id run kill @s",
+						"permission_level": 2,
+						"name": "Removes the doll unless it's holding something."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_overworld] as @e[tag=VoodooDoll,predicate=inkbat:world_overworld] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run tp @s[predicate=!inkbat:teleport_pearl] ~ ~ ~",
+						"permission_level": 2,
+						"name": "Overworld - Teleport the doll to you when it's holding an item that's not an ender pearl."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_overworld] as @e[tag=VoodooDoll,predicate=inkbat:world_overworld,predicate=!inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run playsound minecraft:entity.horse.saddle master @p[tag=Puppeteer] ~ ~ ~ 0.5 1.5",
+						"permission_level": 2,
+						"name": "Plays sound when teleport."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_overworld] as @e[tag=VoodooDoll,predicate=!inkbat:world_overworld,predicate=!inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run playsound minecraft:block.note_block.pling master @p[tag=Puppeteer] ~ ~ ~ 0.7 0.5",
+						"permission_level": 2,
+						"name": "Plays sound when puppet isn't in overworld."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_nether] as @e[tag=VoodooDoll,predicate=inkbat:world_nether] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run tp @s[predicate=!inkbat:teleport_pearl] ~ ~ ~",
+						"permission_level": 2,
+						"name": "Nether - Teleport the doll to you when it's holding an item that's not an ender pearl."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_nether] as @e[tag=VoodooDoll,predicate=inkbat:world_nether,predicate=!inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run playsound minecraft:entity.horse.saddle master @p[tag=Puppeteer] ~ ~ ~ 0.5 1.5",
+						"permission_level": 2,
+						"name": "Plays sound when teleport."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_nether] as @e[tag=VoodooDoll,predicate=!inkbat:world_nether,predicate=!inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run playsound minecraft:block.note_block.pling master @p[tag=Puppeteer] ~ ~ ~ 0.7 0.5",
+						"permission_level": 2,
+						"name": "Plays sound when puppet isn't in the nether."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_end] as @e[tag=VoodooDoll,predicate=inkbat:world_end] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run tp @s[predicate=!inkbat:teleport_pearl] ~ ~ ~",
+						"permission_level": 2,
+						"name": "End - Teleport the doll to you when it's holding an item that's not an ender pearl."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_end] as @e[tag=VoodooDoll,predicate=inkbat:world_end,predicate=!inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run playsound minecraft:entity.horse.saddle master @p[tag=Puppeteer] ~ ~ ~ 0.5 1.5",
+						"permission_level": 2,
+						"name": "Plays sound when teleport."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute at @s[predicate=inkbat:world_end] as @e[tag=VoodooDoll,predicate=!inkbat:world_end,predicate=!inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 if data entity @s HandItems[0].id run playsound minecraft:block.note_block.pling master @p[tag=Puppeteer] ~ ~ ~ 0.7 0.5",
+						"permission_level": 2,
+						"name": "Plays sound when puppet isn't in the end."
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute as @s at @e[tag=VoodooDoll] if score @s UUID_1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s UUID_2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s UUID_3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s UUID_4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run forceload add ~ ~ ~ ~",
+						"permission_level": 2
+					}
+				]
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:spawn_entity",
+						"entity_type": "minecraft:armor_stand",
+						"tag": "{Tags:[VoodooDoll],Invulnerable:1b,NoBasePlate:1b,ShowArms:1b,Small:1b,ArmorItems:[{id:'leather_boots',Count:1b},{id:'leather_leggings',Count:1b},{id:'leather_chestplate',Count:1b},{id:'leather_helmet',Count:1b}],HandItems:[{},{}],DisabledSlots:4079166,Pose:{Body:[357f,0f,0f],Head:[335f,0f,0f],LeftLeg:[0f,0f,351f],RightLeg:[0f,0f,11f],LeftArm:[39f,172f,236f],RightArm:[39f,186f,124f]}}",
+						"entity_action": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "execute store result score @s PuppetOwnerUUID1 run data get entity @p[tag=Puppeteer] UUID[0]",
+									"permission_level": 2
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "execute store result score @s PuppetOwnerUUID2 run data get entity @p[tag=Puppeteer] UUID[1]",
+									"permission_level": 2
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "execute store result score @s PuppetOwnerUUID3 run data get entity @p[tag=Puppeteer] UUID[2]",
+									"permission_level": 2
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "execute store result score @s PuppetOwnerUUID4 run data get entity @p[tag=Puppeteer] UUID[3]",
+									"permission_level": 2
+								}
+							]
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "execute as @s at @e[tag=VoodooDoll] if score @s UUID_1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s UUID_2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s UUID_3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s UUID_4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run forceload add ~ ~ ~ ~",
+						"permission_level": 2
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.horse.saddle master @s ~ ~ ~ 0.5 2",
+						"permission_level": 2
+					}
+				]
+			}
+		},
+		"cooldown": 5,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	
+	"doll_remove_sound": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.horse.armor master @s ~ ~ ~ 0.5 1.5",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "inkbat:voodoo_doll_visual",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	
+	"puppet_always_faces_owner": {
+		"type": "origins:action_over_time",
+		"interval": 3,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @e[tag=VoodooDoll] at @s if score @p[tag=Puppeteer] UUID_1 = @s PuppetOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s PuppetOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s PuppetOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s PuppetOwnerUUID4 facing entity @p[tag=Puppeteer] eyes run tp @s ~ ~ ~ ~ ~"
+		}
+	}
+}

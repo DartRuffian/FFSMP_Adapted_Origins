@@ -1,0 +1,30 @@
+{
+    "type": "origins:restrict_armor",
+    "name": "Iron weakness",
+    "description": "Cannnot equip iron armor.",
+    "hidden": true,
+    "head": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_helmet"
+	}
+    },
+    "chest": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_chestplate"
+	}
+    },
+    "legs": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_leggings"
+	}
+    },
+    "feet": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:iron_boots"
+	}		
+    }
+}

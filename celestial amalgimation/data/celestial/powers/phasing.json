@@ -1,0 +1,78 @@
+{
+	"type": "origins:multiple",
+		"resource_toggle": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"toggle_on": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "celestial:phasing_resource_toggle",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			"if_action": {
+					"type": "origins:change_resource",
+					"resource": "celestial:phasing_resource_toggle",
+					"change": 1
+			},
+			"else_action": {
+					"type": "origins:change_resource",
+					"resource": "celestial:phasing_resource_toggle",
+					"change": -1
+			}
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "data get entity @s SelectedItemSlot",
+			"comparison": "==",
+			"compare_to": 1
+		},
+		"cooldown": 1,
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"phase": {
+		"type": "origins:phasing",
+		"blacklist": true,
+		"render_type": "blindness",
+		"view_distance": 10,
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "origins:unphasable"
+		},
+		"phase_down_condition": {
+			"type": "origins:and",
+			"conditions": [{
+				"type": "origins:sneaking"
+			}]
+		},
+		"condition": {
+			"type": "origins:resource",
+				"resource": "celestial:phasing_resource_toggle",
+				"comparison": "==",
+				"compare_to": 0
+		}
+	},
+    "hidden": true,	
+	"water": {
+		 "type": "origins:ignore_water",
+		"condition": {
+			"type": "origins:resource",
+				"resource": "celestial:phasing_resource_toggle",
+				"comparison": "==",
+				"compare_to": 0
+		}
+	}
+}

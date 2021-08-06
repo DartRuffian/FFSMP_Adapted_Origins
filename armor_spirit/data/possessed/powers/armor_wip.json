@@ -1,0 +1,29 @@
+{
+	"type": "origins:starting_equipment",
+	"stacks": [{
+			"item": "mcda:phantom_armor_helmet",
+			"amount": 1,
+			"tag": "{    AttributeModifiers: [ { AttributeName: \"generic.movementSpeed\", Name: \"generic.movementSpeed\", Amount: -6.25, Operation: 1, UUIDMost: 21640, UUIDLeast: 810359 } ]} ",
+			"slot": 39
+		},
+		{
+			"item": "mcda:phantom_armor_chestplate",
+			"amount": 1,
+			"tag": "{    AttributeModifiers: [ { AttributeName: \"generic.movementSpeed\", Name: \"generic.movementSpeed\", Amount: -6.25, Operation: 1, UUIDMost: 21640, UUIDLeast: 810359 } ]} ",
+			"slot": 38
+		},
+		{
+			"item": "mcda:phantom_armor_leggings",
+			"amount": 1,
+			"tag": "{AttributeModifiers:[{AttributeName: \"generic.movementSpeed\",Name: \"generic.movementSpeed\",Amount: -6.25,Operation: 1,UUIDMost: 21640, UUIDLeast: 810359 } ]} ",
+			"slot": 37
+		},
+		{
+			"item": "mcda:phantom_armor_boots",
+			"amount": 1,
+			"tag": "{AttributeModifiers:[{AttributeName:\"generic.movementSpeed\", Name: \"generic.movementSpeed\", Amount: -6.25, Operation: 1, UUIDMost: 21640, UUIDLeast: 810359 } ]} ",
+			"slot": 36
+		}
+	],
+	"recurrent": true
+}

@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "addition",
+        "value": 0.05
+    },
+    "name": "Fast Metabolism",
+    "description": "Due to your small body, you have less stomach capacity resulting in faster metabolism."
+}

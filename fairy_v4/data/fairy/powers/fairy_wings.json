@@ -1,0 +1,378 @@
+{
+    "type": "origins:multiple",
+    "space": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:levitation",
+                "duration": 2,
+                "amplifier": 3,
+                "show_icon": false,
+                "is_ambient": true,
+                "show_particles": false
+            }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "fairy:fairy_wings_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "fairy:fairy_wings_float_meter_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "key": {
+            "key": "key.jump",
+            "continuous": true
+        }
+    },
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": false
+        }
+    },
+    "idle": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:levitation",
+                "duration": 2,
+                "amplifier": 255,
+                "show_icon": false,
+                "is_ambient": true,
+                "show_particles": false
+            }
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "fairy:fairy_wings_toggle"
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "fairy:fairy_wings_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "fairy:fairy_wings_float_meter_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "change_resource": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_resource",
+            "change": 2
+        },
+        "cooldown": 0,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.jump",
+            "continuous": true
+        }
+    },
+    "countdown": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_resource",
+            "change": -1
+        },
+        "interval": 2,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fairy:fairy_wings_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "float_meter_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 240,
+        "start_value": 240,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 9,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:power_active",
+                        "power": "fairy:fairy_wings_toggle"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "fairy:fairy_wings_float_meter_resource",
+                        "comparison": "==",
+                        "compare_to": 240
+                    }
+                ]
+            }
+        }
+    },
+    "float_meter_down": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:crossbow"
+            }
+          }
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "fairy:fairy_wings_float_meter_resource",
+                "change": -1
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "fairy:fairy_wings_float_meter_resource",
+                "change": -1
+            }
+        },
+        "interval": 2,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle"
+        }
+    },
+    "knockback": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "name": "Knockback Immunity",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "value": 1.0,
+            "operation": "addition"
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fairy:fairy_wings_knockback_time",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "slowfall": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:slow_falling",
+                "duration": 2,
+                "amplifier": 0,
+                "show_icon": false,
+                "is_ambient": true,
+                "show_particles": false
+            }
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle"
+        }
+    },
+    "falldmg": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:set_fall_distance",
+            "fall_distance": 0
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle"
+        }
+    },
+    "knockback_time": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "knockback_meter_down": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_knockback_time",
+            "change": -1
+        },
+        "interval": 2
+    },
+    "condition": {
+        "type": "origins:power_active",
+        "power": "fairy:fairy_wings_toggle",
+        "inverted": true
+    },
+    "knockback_meter_up": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_knockback_time",
+            "change": 120
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle"
+        }
+    },
+    "float_reg_meter": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 120,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 15,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power_active",
+                        "power": "fairy:fairy_wings_toggle",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "fairy:fairy_wings_float_reg_meter",
+                        "comparison": "<",
+                        "compare_to": 120
+                    }
+                ]
+            }
+        }
+    },
+    "float_reg_meter_up": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_float_reg_meter",
+            "change": 3
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle",
+            "inverted": true
+        }
+    },
+    "float_reg_meter_down": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_float_reg_meter",
+            "change": -120
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle"
+        }
+    },
+    "float_meter_up": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "fairy:fairy_wings_float_meter_resource",
+            "change": 240
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fairy:fairy_wings_float_reg_meter",
+            "comparison": "==",
+            "compare_to": 120
+        }
+    },
+    "float_meter_quick_down": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:crossbow"
+            }
+          }
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "fairy:fairy_wings_float_meter_resource",
+                "change": -1
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "fairy:fairy_wings_float_meter_resource",
+                "change": -1
+            }
+        },
+        "cooldown": 2,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "fairy:fairy_wings_toggle"
+        },
+        "key": {
+            "key": "key.jump",
+            "continuous": true
+        }
+    },
+    "name": "Fairy wings",
+    "description": "Thanks to a combination of your magic and your wings, you can fly for a short amount of time. While toggled, you will fall slowly, but you won't recharge your magic power unless untoggled."
+}

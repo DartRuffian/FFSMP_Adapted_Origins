@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"inkbat:player_uuid",
+		"inkbat:voodoo_setup",
+		"inkbat:voodoo_death_reset",
+		"inkbat:voodoo_doll",
+		"inkbat:voodoo_targeting",
+		"inkbat:voodoo_pyro",
+		"inkbat:voodoo_ender",
+		"inkbat:voodoo_potion",
+		"inkbat:illager_ally",
+		"inkbat:blinding_sun",
+		"inkbat:meat_preference"
+    ],
+    "icon": "minecraft:armor_stand",
+    "order": 13,
+    "impact": 3,
+	"name": "Puppeteer",
+	"description": "Dark Arts practitioners. With their magic, puppeteers toy with their target's life, no matter where they try to hide."
+}

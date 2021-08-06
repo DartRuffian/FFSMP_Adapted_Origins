@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"botworigins:now_you_dont",
+		"botworigins:now_you_dont_invisibility",
+		"botworigins:now_you_dont_surprise",
+		"botworigins:teleports_behind_you",
+		"botworigins:ninja_jump",
+		"botworigins:agile",
+		"botworigins:ninjas_dont_mine",
+		"botworigins:light_weight"
+	],
+	"icon": "minecraft:leather_chestplate",
+	"order": 0,
+	"impact": 1,
+    "name": "Sheikah",
+    "description": "From the Breath of the Wild Origins Pack. Sheikahs are sleek, ninja like warriors. You know you want to be a ninja."
+}

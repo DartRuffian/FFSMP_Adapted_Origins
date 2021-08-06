@@ -1,0 +1,12 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:fire"
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 1
+    },
+    "name": "Melty Body",
+    "description": "Being made of... well... metal, you can melt really fast."
+}

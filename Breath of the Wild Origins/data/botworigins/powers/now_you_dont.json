@@ -1,0 +1,7 @@
+{
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": "secondary",
+    "name": "Now You See Me, Now You Dont",
+    "description": "If you press your secondary keybind, you can go straight up invisible. It comes at a cost, while you are invisible you have half of your normal health."
+  }

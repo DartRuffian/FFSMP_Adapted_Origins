@@ -1,0 +1,17 @@
+{
+   "type":"origins:fire_projectile",
+   "name": "Fairy dust",
+   "description": "You can gather some magic dust and throw at your foes, making them levitate.",
+   "cooldown":50,
+   "hud_render":{
+      "bar_index":7
+   },
+   "entity_type":"minecraft:shulker_bullet",
+   "sound":"minecraft:entity.evoker.cast_spell",
+   "speed":4,
+   "count":3,
+   "divergence":5,
+   "key":"secondary",
+   "name": "Fairy dust",
+   "description": "You can gather some magic dust and throw at your foes, making them levitate."
+}

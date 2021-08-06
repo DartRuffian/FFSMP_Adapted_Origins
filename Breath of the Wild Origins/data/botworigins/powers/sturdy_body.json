@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Sturdy Body",
+    "attribute": "minecraft:generic.armor",
+    "value": 12.0,
+    "operation": "addition"
+  },
+  "name": "Sturdy Body",
+  "description": "You are very durable and can take a real beating."
+}

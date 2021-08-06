@@ -1,0 +1,13 @@
+{
+	"type": "origins:prevent_item_use",
+        "name": "Iron weakness",
+        "description": "You cannot use or equip any iron item, due to being weak to it, suffering double damage if attacked by it.",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": {
+			"tag": "fairy:iron"
+		}
+	   },
+        "hidden": false
+        }
+	

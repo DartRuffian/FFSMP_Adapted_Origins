@@ -1,0 +1,71 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+    "name": "Desert Advantage",
+    "attribute": "minecraft:generic.movement_speed",
+    "value": 0.14,
+    "operation": "addition"
+  },
+  "tick_rate": 100,
+  "condition": {
+      "type": "origins:or",
+      "conditions": [
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:savanna"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:savanna_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:shattered_savanna"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:shattered_savanna_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:desert"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:desert_hills"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:desert_lakes"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:badlands"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:modified_badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:wooded_badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:modified_wooded_badlands_plateau"
+          },
+          {
+            "type": "origins:biome",
+            "biome": "minecraft:eroded_badlands"
+          }
+      ]
+
+
+    },
+    "name": "Sand Speed",
+    "description": "You are much more used to the desert and can travel through them a lot quicker."
+}

@@ -1,0 +1,23 @@
+{
+    "powers": [
+        "fairy:big_fairy_wings",
+        "fairy:sky_blessing",
+	"fairy:better_fairy_dust",
+	"fairy:light_magic",
+	"fairy:ranged_options",	
+	"fairy:diamond_gatherer",
+	"fairy:iron_weakness",
+	"fairy:iron_weakness1",	
+	"fairy:iron_weakness2",
+	"fairy:very_flammable",
+	"fairy:no_shield",
+	"fairy:tiny_body",
+	"fairy:smolman"
+    ],
+    "icon": "minecraft:feather",
+    "order": 1,
+    "impact": 2,
+	"unchoosable": true,
+    "name": "Fairy",
+    "description": "After killing the end dragon its magic has made your wings and magic power grow"
+}

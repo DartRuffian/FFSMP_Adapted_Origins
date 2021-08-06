@@ -1,0 +1,44 @@
+{
+  "type": "origins:modify_food",
+  "item_condition": {
+  "type": "origins:ingredient",
+  "ingredient":
+    {
+    "item": "minecraft:sweet_berries"
+    }
+  },
+  "food_modifier":
+  {
+   "operation": "addition",
+   "value": 4.0
+  },
+  "saturation_modifier":
+  {
+    "operation": "addition",
+    "value": 1.0
+  },
+	"entity_action": {
+		"action": {
+			"type": "origins:and",
+			"actions": [
+			{
+					"type": "origins:apply_effect",
+					"effect": {
+						"effect": "minecraft:speed",
+						"duration": 100,
+						"amplifier": 0
+					}
+				},
+				{
+					"type": "origins:apply_effect",
+					"effect": {
+						"effect": "minecraft:regeneration",
+						"duration": 100,
+						"amplifier": 0
+					}
+				}
+			]
+			}
+		},
+  "hidden": false
+}

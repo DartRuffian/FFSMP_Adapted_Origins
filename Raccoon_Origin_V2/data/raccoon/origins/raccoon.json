@@ -1,0 +1,25 @@
+{
+	"powers": [
+	        "raccoon:speedy",
+            "origins:fragile",
+			"raccoon:almost_invisible",
+			"raccoon:sneaky",
+			"raccoon:hungry",
+			"raccoon:digging",
+			"raccoon:climbing",
+			"raccoon:poisondiet",
+			"origins-classes:sneaky",
+			"raccoon:burrower",
+			"origins:cat_vision",
+			"raccoon:smolman"
+	],
+	"icon": "minecraft:brown_dye",
+	"order": 6,
+	"impact": 1,
+        "name": "Raccoon",
+        "description": "You are a sneaky creature, but if you get caught you're probably doomed.",
+			"upgrades":{
+        "condition": "minecraft:end/kill_dragon",
+        "origin": "raccoon:adapted_raccoon",
+        "announcement": "You have evolved... Best check your origin again..."}
+}

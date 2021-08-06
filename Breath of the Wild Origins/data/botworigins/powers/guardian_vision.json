@@ -1,0 +1,21 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:and",
+        "actions": [ 
+        {
+          "type": "origins:execute_command",
+          "command": "effect give @e[distance=1..10] glowing 1 0 true",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "effect clear @p",
+          "permission_level": 4
+        }
+      ]
+	},
+	"interval": 19,
+  "name": "Guardian Vision",
+  "description": "You can see everyone and everything close to you. Even if they are behind a wall."
+}

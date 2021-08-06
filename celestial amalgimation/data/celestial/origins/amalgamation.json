@@ -1,0 +1,28 @@
+{
+    "powers": [
+		"celestial:smolman",
+		"celestial:digger",
+		"celestial:climbing",
+		"celestial:ghost/possession",
+		"celestial:ghost/spellbook",
+		"celestial:ghost/toggle",
+        "celestial:phasing",
+		"celestial:hotbar_select",
+		"celestial:divine_sight",
+		"celestial:invis",
+		"celestial:tagging",
+		"celestial:steal",
+		"celestial:enhanced_vis",
+		"celestial:flight",
+		"celestial:fluffy_paws"
+		
+    ],
+	"icon": {
+		"item": "mcdar:totem_of_regeneration"
+	},
+		"unchoosable": true,
+	"order": 20,
+	"impact": 3,
+    "name": "Celestial Raccoon",
+    "description": "i'll deal with this later"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "origins:launch",
+    "cooldown": 600,
+    "hud_render": {
+      "bar_index": 4
+    },
+    "sound": "minecraft:entity.parrot.fly",
+    "speed": 2,
+    "key": "primary",
+    "name": "Revali's Gale",
+    "description": "Revali's Gale is now ready."
+  }

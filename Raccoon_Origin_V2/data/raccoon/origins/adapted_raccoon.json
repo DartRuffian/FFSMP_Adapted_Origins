@@ -1,0 +1,27 @@
+{
+	"powers": [
+	        "raccoon:speedy",
+            "origins:fragile",
+			"raccoon:true_invis",
+			"raccoon:sneaky",
+			"raccoon:hungry",
+			"raccoon:digging",
+			"raccoon:climbing",
+			"raccoon:poisondiet",
+			"origins-classes:sneaky",
+			"raccoon:burrower",
+			"origins:cat_vision",
+			"raccoon:enhanced_vis",
+			"raccoon:fluffy_paws",
+			"raccoon:smolman",
+			"raccoon:trash_eater",
+			"raccoon:steal",
+			"raccoon:tagging"
+	],
+	"icon": "minecraft:brown_dye",
+	"unchoosable": true,
+	"order": 6,
+	"impact": 1,
+        "name": "Raccoon",
+        "description": "After stabbing that giant flying lizard in the back you feel your natural skills infused with it's magic"
+}

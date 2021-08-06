@@ -1,0 +1,9 @@
+
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:fire"
+  },
+  "name": "Death Mountain Resistance",
+  "description": "Since your ancesters lived on Death Mountain, you are used to the heat and can survive in lava."
+}

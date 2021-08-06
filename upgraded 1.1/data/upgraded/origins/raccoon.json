@@ -1,0 +1,21 @@
+{
+	"powers": [
+	        "raccoon:speedy",
+            "origins:fragile",
+			"raccoon:almost_invisible",
+			"raccoon:sneaky",
+			"raccoon:hungry",
+			"raccoon:digging",
+			"raccoon:short",
+			"raccoon:climbing",
+			"raccoon:poisondiet",
+			"origins-classes:sneaky",
+			"raccoon:burrower",
+			"origins:cat_vision"
+	],
+	"icon": "minecraft:brown_dye",
+	"order": 6,
+	"impact": 1,
+        "name": "Raccoon",
+        "description": "You are a sneaky creature, but if you get caught you're probably doomed."
+}

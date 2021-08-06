@@ -1,0 +1,32 @@
+{
+    "type": "origins:starting_equipment",
+    "stacks": [
+        {
+            "item": "minecraft:leather_helmet",
+            "amount": 1,
+            "tag": "{display: {color: 7733442}}",
+            "slot": 39
+        },
+        {
+            "item": "minecraft:leather_chestplate",
+            "amount": 1,
+            "tag": "{display: {color: 7733442}}",
+            "slot": 38
+        },
+        {
+            "item": "minecraft:leather_leggings",
+            "amount": 1,
+            "tag": "{display: {color: 7733442}}",
+            "slot": 37
+        },
+        {
+            "item": "minecraft:leather_boots",
+            "amount": 1,
+            "tag": "{display: {color: 7733442}}",
+            "slot": 36
+        }
+    ],
+		"recurrent": true,
+		"name": "Soul Armor",
+    "description": "Your soul is so tightly bound to armor that you even respawn with armor as weak as said armor may be"
+}

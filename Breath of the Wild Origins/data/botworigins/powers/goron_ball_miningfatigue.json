@@ -1,0 +1,13 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+      "type": "origins:execute_command",
+      "command": "effect give @p mining_fatigue 1 255 true",
+      "permission_level": 4
+  },
+  "interval": 19,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "botworigins:goron_ball_form"
+}
+}

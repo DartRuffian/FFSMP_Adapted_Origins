@@ -1,0 +1,19 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "tp @s 67 2 -489",
+		"permission_level": 4
+	},
+	"interval": 20,
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "offhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:dirt"
+			}
+		}
+	}
+}

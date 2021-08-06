@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "origins": [
+        "fairy:fairy",
+		"fairy:adapted_fairy"
+    ]
+}

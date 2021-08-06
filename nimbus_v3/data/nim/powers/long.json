@@ -1,0 +1,19 @@
+{
+  "type": "origins:attribute",
+  "modifiers": [
+    {
+      "name": "Extra Reach block reach",
+      "attribute": "reach-entity-attributes:reach",
+      "value": 3.5,
+      "operation": "addition"
+    },
+    {
+      "name": "Extra Reach entity reach",
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 3,
+      "operation": "addition"
+    }
+  ],
+  "name": "Vaporous Contortion",
+  "description": "Since you have a cloud-like composition, you are able to stretch your vaporous form, meaning you can reach further distances."
+}

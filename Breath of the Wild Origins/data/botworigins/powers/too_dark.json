@@ -1,0 +1,16 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "effect give @p weakness 5 1 true",
+        "permission_level": 4
+    },
+    "interval": 199,
+    "condition":
+    {
+     "type": "origins:daytime",
+     "inverted": true
+    },
+      "name": "Nighttime Weakness",
+      "description": "As a Gerudo, the sun is very bright, you just aren't always as strong during nighttime."
+}

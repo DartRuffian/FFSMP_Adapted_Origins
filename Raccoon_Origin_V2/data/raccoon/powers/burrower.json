@@ -1,0 +1,13 @@
+{
+  "type": "origins:prevent_sleep",
+  "condition": {
+    "type": "origins:block_collision",
+    "offset_x": 0,
+    "offset_y": 2,
+    "offset_z": 0,
+	"inverted": true
+  },
+  "message": "Ceiling is too high!",
+  "name": "Burrower",
+  "description": "Being used to living in small spaces, you can only sleep in places with a low ceiling."
+}

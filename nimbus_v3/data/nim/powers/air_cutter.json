@@ -1,0 +1,17 @@
+{
+	"type": "origins:fire_projectile",
+	"entity_type": "minecraft:llama_spit",
+	"cooldown": 50,
+	"speed": 3,
+	"count": 5,
+	"divergence": 1,
+	"hud_render": {
+		"bar_index": 2
+	},
+	"key": {
+		"key": "primary",
+		"continuous": true
+	},	
+	"name": "Air Cutter",
+	"description": "You gather a large amount of energy and push highly condensed air towards your enemy."
+}

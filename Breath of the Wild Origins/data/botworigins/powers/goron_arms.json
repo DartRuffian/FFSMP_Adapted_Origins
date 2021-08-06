@@ -1,0 +1,10 @@
+{
+  "type": "origins:modify_harvest",
+  "allow": true,
+  "block_condition": {
+    "type": "origins:in_tag",
+    "tag": "origins:natural_stone"
+  },
+  "name": "Goron Arms",
+  "description": "Your arms are so strong you can break natural stone at breakneck speeds."
+}

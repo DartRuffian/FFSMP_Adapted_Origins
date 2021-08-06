@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"botworigins:sleek_body",
+		"botworigins:can_see_underwater",
+		"botworigins:water_breather",
+		"botworigins:water_launch",
+		"botworigins:dry_skin",
+		"botworigins:fire_weakness",
+		"botworigins:clumsy_sword_user",
+		"botworigins:sky_swim"
+	],
+	"icon": "minecraft:salmon",
+	"order": 0,
+	"impact": 1,
+    "name": "Zora",
+    "description": "From the Breath of the Wild Origins Pack. Being a zora is pretty cool, you can live both in water (a lot) and on land."
+}

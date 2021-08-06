@@ -1,0 +1,10 @@
+{
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:blindness",
+        "minecraft:nausea",
+		"minecraft:poison"
+    ],
+   "name": "Enhanced Vision",
+   "description": "your eyes have become immune to negative effects"
+}

@@ -1,0 +1,20 @@
+{
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+      "type": "origins:damage",
+      "amount": 10,
+      "source": {
+        "name": "generic"
+      }
+    },
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:arrow"
+    },
+    "cooldown": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "name": "Master Marksman",
+    "description": "Your bow does a lot more damage than normal. Two arrows will kill an unarmored person."
+  }

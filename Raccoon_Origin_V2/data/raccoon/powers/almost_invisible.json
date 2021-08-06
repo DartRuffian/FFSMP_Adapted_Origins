@@ -1,0 +1,23 @@
+{
+  "type": "origins:model_color",
+  "alpha": 0.03,
+   "condition": {
+  "type": "origins:and",
+  "conditions": [
+    {
+      "type": "origins:power_active",
+      "power": "raccoon:sneaky"
+    },
+    {    
+      "type": "origins:sneaking"
+    },
+	    {    
+      "type": "origins:health",
+	  "comparison": ">",
+	  "compare_to": 8
+		}
+  ]
+   },
+   "name": "Hidden in Plain Sight",
+   "description": "Using the primary key while sneaking, you can go practically invisible. Though you are still targeted by hostile mobs, and you can't go invisible with less than 3 hearts."
+}

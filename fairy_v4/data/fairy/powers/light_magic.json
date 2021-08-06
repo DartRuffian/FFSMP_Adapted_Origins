@@ -1,0 +1,22 @@
+{
+  "name": "Light magic",
+  "description": " [Hotbar 3} You can create a healing cloud that applies regeneration to the entities on it.",
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:spawn_effect_cloud",
+    "radius": 8.0,
+    "effect": {
+      "effect": "minecraft:regeneration",
+      "amplifier": 3,
+      "duration": 200
+    }
+  },
+  "key":  {
+        "key": "key.hotbar.3"
+},
+  "cooldown": 600,
+  "hud_render": {
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+    "bar_index": "12"
+  }
+}

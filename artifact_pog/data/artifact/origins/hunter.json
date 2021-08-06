@@ -1,0 +1,12 @@
+{
+	"powers": [
+	        "artifact:no_accdental_head_place",
+			"artifact:emergency_meeting"
+	],
+	"icon": "minecraft:compass",
+	"unchoosable": false,
+	"order": 6,
+	"impact": 1,
+        "name": "hunter",
+        "description": "this will let you use artifacts that grant powers this is to allow more unique artifacts"
+}

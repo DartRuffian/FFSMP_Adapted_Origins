@@ -1,0 +1,15 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "name": "Less hearts",
+      "attribute": "minecraft:generic.max_health",
+      "value": -10.0,
+      "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "botworigins:now_you_dont"
+    },
+    "hidden": true
+}

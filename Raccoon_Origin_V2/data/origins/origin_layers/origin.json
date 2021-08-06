@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "origins": [
+     "raccoon:raccoon",
+	 "raccoon:adapted_raccoon"
+  ]
+}

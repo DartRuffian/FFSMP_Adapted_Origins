@@ -1,0 +1,16 @@
+{
+   "type":"origins:fire_projectile",
+   "cooldown":35,
+   "hud_render":{
+      "bar_index":7
+   },
+   "entity_type":"minecraft:shulker_bullet",
+   "sound":"minecraft:entity.phantom.death",
+   "speed":4,
+   "count":3,
+   "divergence":5,
+   "key":"secondary",
+   "hidden":false,
+   "name":"Air Blast",
+   "description":"You condense air into a projectile which lifts its victims into the air."
+}

@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"nim:airblast",
+		"nim:fly",
+		"nim:gather",
+		"nim:skyborn",
+		"nim:airbreak",
+		"nim:clear",
+		"nim:highsleep",
+		"nim:unwieldy",
+		"nim:air_cutter",
+		"nim:long",
+		"origins:light_armor",
+		"nim:evaporate"
+	],
+	"icon": "minecraft:quartz",
+	"order": 10,
+	"impact": 3,
+	"name": "Nimbus",
+	"description": "Denizens of the upper atmosphere with a natural affinity over air."
+}

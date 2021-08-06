@@ -1,0 +1,249 @@
+{
+	"hidden": true,
+	"name": "Puppet & Victim UUID",
+	"description": "Saves the voodoo doll's and the target victim's UUID.",
+	
+	"type": "origins:multiple",
+	
+	"callbacks": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s add Puppeteer",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID1 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID2 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID3 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID4 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID1 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID2 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID3 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID4 dummy",
+					"permission_level": 2
+				}
+			]
+		},
+		
+		"entity_action_added": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s add Puppeteer",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID1 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID2 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID3 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add PuppetOwnerUUID4 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID1 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID2 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID3 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add VictimOwnerUUID4 dummy",
+					"permission_level": 2
+				}
+			]
+		},
+		
+		"entity_action_lost": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s remove Puppeteer",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[type=minecraft:iron_golem,distance=..10] run data modify entity @s AngerTime set value 0",
+					"permission_level": 2
+				}
+			]
+		},
+		
+		"entity_action_removed": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s remove Puppeteer",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[type=minecraft:iron_golem,distance=..10] run data modify entity @s AngerTime set value 0",
+					"permission_level": 2
+				}
+			]
+		}
+	},
+	
+	"remove_self_target": {
+		"type": "origins:action_on_callback",
+		"entity_action_lost": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				}
+			]
+		},
+		
+		"entity_action_removed": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				}
+			]
+		}
+	}
+}

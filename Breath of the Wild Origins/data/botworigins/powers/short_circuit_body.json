@@ -1,0 +1,14 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "lightningBolt"
+  },
+  "modifier": {
+    "operation": "addition",
+    "value": 5,
+    "name": "Thunder Weakness"
+  },
+  "name": "Short Circuit-able",
+  "description": "Being a machine, you short circuit really easily, so don't get struck by lightning."
+}

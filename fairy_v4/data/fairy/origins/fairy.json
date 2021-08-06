@@ -1,0 +1,26 @@
+{
+    "powers": [
+        "fairy:fairy_wings",
+        "fairy:sky_blessing",
+	"fairy:fairy_dust",
+	"fairy:light_magic",
+	"fairy:ranged_options",	
+	"fairy:diamond_gatherer",
+	"fairy:iron_weakness",
+	"fairy:iron_weakness1",	
+	"fairy:iron_weakness2",
+	"fairy:very_flammable",
+	"fairy:no_shield",
+	"fairy:tiny_body",
+	"fairy:smolman"
+    ],
+    "icon": "minecraft:feather",
+    "order": 1,
+    "impact": 2,
+    "name": "Fairy",
+    "description": "Powerful creatures, they can use their magic to fly and heal, but they are fragile, specially to iron.",
+	"upgrades":{
+        "condition": "minecraft:end/kill_dragon",
+        "origin": "fairy:adapted_fairy",
+        "announcement": "You have evolved... Best check your origin again..."}
+}

@@ -1,0 +1,29 @@
+{
+    "type": "origins:starting_equipment",
+    "stacks": [
+        {
+            "item": "mcda:phantom_armor_helmet",
+            "amount": 1,
+            "slot": 39
+        },
+        {
+            "item": "mcda:phantom_armor_chestplate",
+            "amount": 1,
+            "tag": "{display: {color: 16383998}}",
+            "slot": 38
+        },
+        {
+            "item": "mcda:phantom_armor_leggings",
+            "amount": 1,
+            "tag": "{display: {color: 16383998}}",
+            "slot": 37
+        },
+        {
+            "item": "mcda:phantom_armor_boots",
+            "amount": 1,
+            "tag": "{display: {color: 16383998}}",
+            "slot": 36
+        }
+    ],
+	"recurrent": true
+}

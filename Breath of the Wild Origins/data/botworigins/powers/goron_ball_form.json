@@ -1,0 +1,7 @@
+  {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": "primary",
+    "name": "Ball Form",
+    "description": "Press G to turn into a ball. You move much faster, but at the cost of not being able to mine or do combat."
+  }

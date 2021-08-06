@@ -1,0 +1,25 @@
+{
+    "name": "Air Affinity",
+    "description": "You may break blocks in the air as others do on land.",
+    "hidden": false,
+    "type": "origins:modify_break_speed",
+    "modifier":
+    {
+        "operation": "multiply_total",
+        "value": 5
+    },
+    "block_condition":
+    {
+        "type": "origins:block",
+        "inverted": true,
+        "block": "air"
+    },
+    "condition":
+    {
+        "type": "origins:block_collision",
+        "inverted": true,
+        "offset_x": 0,
+        "offset_y": -0.1,
+        "offset_z": 0
+    }
+}

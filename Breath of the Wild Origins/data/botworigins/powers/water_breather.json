@@ -1,0 +1,11 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "effect give @p water_breathing 10 200 true",
+        "permission_level": 4
+    },
+    "interval": 200,
+    "name": "Water Breather",
+    "description": "Being a Zora allows you to breathe both in water AND on land."
+}

@@ -1,0 +1,33 @@
+{
+  "powers": [
+    "foxboi_two:stealth_timer",
+    "foxboi_two:stealth_countdown",
+    "foxboi_two:stealth_translucent",
+    "foxboi_two:stealth_w",
+    "foxboi_two:stealth_a",
+    "foxboi_two:stealth_s",
+    "foxboi_two:stealth_d",
+    "foxboi_two:stealth_jump",
+    "foxboi_two:stealth_primary",
+    "foxboi_two:pounce",
+    "foxboi_two:pounce_aerialdamage",
+    "foxboi_two:pounce_falling",
+    "foxboi_two:smolman",
+    "foxboi_two:speed",
+    "foxboi_two:fox_eyes",
+    "foxboi_two:fragilefox",
+    "foxboi_two:hungy",
+    "foxboi_two:fox_pouch",
+    "foxboi_two:fox_pouch_sound",
+    "foxboi_two:monch",
+    "foxboi_two:yummy_berries",
+    "foxboi_two:run",
+    "origins:fall_immunity",
+    "origins:no_shield"
+  ],
+	"icon": "minecraft:sweet_berries",
+	"order": 2,
+	"impact": 2,
+	"name": "Fox",
+	"description": "The magic the dragon released on its death has made you faster and a tad sneeakier"
+}

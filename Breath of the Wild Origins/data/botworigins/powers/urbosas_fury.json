@@ -1,0 +1,25 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+    "type": "origins:and",
+    "actions": [
+        {
+            "type": "origins:execute_command",
+            "command": "execute at @e[distance=1..20] run summon lightning_bolt",
+            "permission_level": 4
+        },
+        {
+            "type": "origins:execute_command",
+            "command": "playsound entity.lightning_bolt.thunder @p[distance=0..20]",
+            "permission_level": 4
+        }
+
+        ]
+    },
+    "cooldown": 600,
+    "hud_render": {
+        "should_render": false
+    },
+    "name": "Urbosa's Fury",
+    "description": "Urbosa's Fury is now ready. Shock everyone within 10 blocks with lightning."
+}

@@ -1,0 +1,8 @@
+{
+    "type": "origins:prevent_item_use",
+    "condition": {
+        "type": "origins:power_active",
+        "power": "botworigins:goron_ball_form"
+    },
+    "hidden": true
+}

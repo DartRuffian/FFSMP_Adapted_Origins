@@ -1,0 +1,12 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:fire"
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 1
+    },
+    "name": "Fire Weakness",
+    "description": "Fire burns away your magic, making you take more damage from it."
+}

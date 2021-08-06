@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"botworigins:sword_masterclass",
+		"botworigins:desert_advantage",
+		"botworigins:urbosas_fury",
+		"botworigins:relatable_tall_problems",
+		"botworigins:desert_armor",
+		"botworigins:too_dark",
+		"botworigins:cold_weakness"
+	],
+	"icon": "minecraft:sand",
+	"order": 0,
+	"impact": 1,
+    "name": "Gerudo",
+    "description": "From the Breath of the Wild Origins Pack. Gerudo are fierce warriors accustomed to the desert."
+}

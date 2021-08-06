@@ -1,0 +1,15 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "name": "Goron Ball Speed",
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.3,
+      "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "botworigins:goron_ball_form"
+    },
+    "hidden": true
+}

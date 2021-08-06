@@ -1,0 +1,1 @@
+data modify entity @e[type=item,tag=dropped,sort=nearest,limit=1] Item set from entity @e[sort=nearest,limit=1,tag=stolen] SelectedItem

@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"origins": [
+		"botworigins:zora",
+		"botworigins:goron",
+		"botworigins:rito",
+		"botworigins:gerudo",
+		"botworigins:sheikah",
+		"botworigins:guardian"
+	]
+}

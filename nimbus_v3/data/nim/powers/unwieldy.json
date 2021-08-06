@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "origins:shields"
+    }
+  },
+  "name": "Unwieldy",
+  "description": "Due to your vapourous composition, your body is unable to hold a shield"
+}

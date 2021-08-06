@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"botworigins:a_creature_of_glide",
+		"botworigins:revalis_gale",
+		"botworigins:master_archer",
+		"botworigins:icy_advantage",
+		"origins:carnivore",
+		"botworigins:feathery_body",
+		"origins:fresh_air"
+	],
+	"icon": "minecraft:feather",
+	"order": 0,
+	"impact": 1,
+    "name": "Rito",
+    "description": "From the Breath of the Wild Origins Pack. Being half rito is pretty nice. Also, I wonder, does that mean Big Bird is your cousin?"
+}

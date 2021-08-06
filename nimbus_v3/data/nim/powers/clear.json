@@ -1,0 +1,9 @@
+{
+    "type": "origins:model_color",
+    "red": 0.9,
+    "green": 0.9,
+	"blue": 0.9,
+    "alpha": 0.45,
+	"name": "Cloudlike Skin",
+	"description": "Your skin is whiter and translucent, like a cloud"
+}

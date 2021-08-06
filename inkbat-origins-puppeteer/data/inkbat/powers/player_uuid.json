@@ -1,0 +1,105 @@
+{
+	"hidden": true,
+	"name": "Player_UUID",
+	"description": "Saves player UUID as four scoreboard scores for easy access for various origin powers.",
+	
+	"type": "origins:multiple",
+	
+	"chosen": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_1 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_2 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_3 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_4 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_1 run data get entity @s UUID[0]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_2 run data get entity @s UUID[1]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_3 run data get entity @s UUID[2]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_4 run data get entity @s UUID[3]",
+					"permission_level": 2
+				}
+			]
+		}
+	},
+	
+	"added": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_1 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_2 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_3 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add UUID_4 dummy",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_1 run data get entity @s UUID[0]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_2 run data get entity @s UUID[1]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_3 run data get entity @s UUID[2]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @a store result score @s UUID_4 run data get entity @s UUID[3]",
+					"permission_level": 2
+				}
+			]
+		}
+	}
+}

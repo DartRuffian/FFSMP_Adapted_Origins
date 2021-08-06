@@ -1,0 +1,426 @@
+{
+	"name": "Target a Victim",
+	"description": "Hit an entity to lock it as your victim. The victim will have particle effects that only you can see. Use your secondary ability key to target yourself as the victim. Use it again to clear target.",
+	
+	"type": "origins:multiple",
+	
+	"victim_particles": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @s at @e[tag=PuppeteerVictim] if score @s UUID_1 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID1 if score @s UUID_2 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID2 if score @s UUID_3 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID3 if score @s UUID_4 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID4 run particle minecraft:witch ~ ~0.5 ~ 0.3 0.4 0.3 0 9 normal @s",
+			"permission_level": 2
+		}
+	},
+	
+	"remove_past_victims": {
+		"type": "origins:self_action_on_hit",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4 run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	
+	"lock_new_victim": {
+		"type": "origins:target_action_on_hit",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s add PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @s store result score @s VictimOwnerUUID1 run data get entity @p[tag=Puppeteer] UUID[0]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @s store result score @s VictimOwnerUUID2 run data get entity @p[tag=Puppeteer] UUID[1]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @s store result score @s VictimOwnerUUID3 run data get entity @p[tag=Puppeteer] UUID[2]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @s store result score @s VictimOwnerUUID4 run data get entity @p[tag=Puppeteer] UUID[3]",
+					"permission_level": 2
+				}
+			]
+		}
+	},
+	
+	"clear_victim_without_tag": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[tag=!PuppeteerVictim] run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[tag=!PuppeteerVictim] run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[tag=!PuppeteerVictim] run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[tag=!PuppeteerVictim] run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				}
+			]
+		}
+	},
+	
+	"is_self_tagged": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	
+	"check_if_tagged": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_targeting_is_self_tagged",
+			"change": -1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_targeting_is_self_tagged",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute if score @s VictimOwnerUUID1 = @s UUID_1",
+					"comparison": "==",
+					"compare_to": "0"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute if score @s VictimOwnerUUID2 = @s UUID_2",
+					"comparison": "==",
+					"compare_to": "0"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute if score @s VictimOwnerUUID3 = @s UUID_3",
+					"comparison": "==",
+					"compare_to": "0"
+				},
+				{
+					"type": "origins:command",
+					"command": "execute if score @s VictimOwnerUUID4 = @s UUID_4",
+					"comparison": "==",
+					"compare_to": "0"
+				}
+			]
+		}
+	},
+	
+	"self": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute store result score @s VictimOwnerUUID1 run data get entity @s UUID[0]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute store result score @s VictimOwnerUUID2 run data get entity @s UUID[1]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute store result score @s VictimOwnerUUID3 run data get entity @s UUID[2]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute store result score @s VictimOwnerUUID4 run data get entity @s UUID[3]",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s add PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.6 1",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "inkbat:voodoo_targeting_is_self_tagged",
+			"comparison": "==",
+			"compare_to": 0
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		}
+	},
+	
+	"clear": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[tag=PuppeteerVictim,distance=1..] if score @s VictimOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s VictimOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s VictimOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s VictimOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s remove PuppeteerVictim",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.6 0.5",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "inkbat:voodoo_targeting_is_self_tagged",
+			"comparison": "==",
+			"compare_to": 1
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		}
+	},
+	
+	"fix_inconsistency": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID2",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID3",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players reset @s VictimOwnerUUID4",
+					"permission_level": 2
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_targeting_is_self_tagged",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID1 = @s UUID_1",
+							"comparison": "==",
+							"compare_to": "0"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID2 = @s UUID_2",
+							"comparison": "==",
+							"compare_to": "0"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID3 = @s UUID_3",
+							"comparison": "==",
+							"compare_to": "0"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID4 = @s UUID_4",
+							"comparison": "==",
+							"compare_to": "0"
+						}
+					]
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID1 = @s UUID_1",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID2 = @s UUID_2",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID3 = @s UUID_3",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute if score @s VictimOwnerUUID4 = @s UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						}
+					]
+				}
+			]
+		}
+	}
+}

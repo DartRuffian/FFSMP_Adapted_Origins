@@ -1,0 +1,287 @@
+{
+	"name": "Pyro Voodoo",
+	"description": "After locking your target, you can set fire to your doll to torture your victim. For mobs, the state of your victim directly mirrors the doll. Players will be set on fire for 20 sec unless the doll is extinguished or removed.",
+	
+	"type": "origins:multiple",
+	
+	"set_entity_on_fire": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @e[tag=VoodooDoll] at @e[tag=PuppeteerVictim] if score @s PuppetOwnerUUID1 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID1 if score @s PuppetOwnerUUID2 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID2 if score @s PuppetOwnerUUID3 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID3 if score @s PuppetOwnerUUID4 = @e[tag=PuppeteerVictim,sort=nearest,limit=1] VictimOwnerUUID4 run data modify entity @e[tag=PuppeteerVictim,sort=nearest,limit=1] Fire set from entity @s Fire",
+			"permission_level": 2
+		}
+	},
+	
+	"extinguish_doll": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @e[tag=VoodooDoll,predicate=inkbat:armorstand_onfire,nbt={Fire:19s}] run data modify entity @s Fire set value 0",
+			"permission_level": 2
+		}
+	},
+	
+	"on_fire": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	
+	"on_fire_max": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	
+	"player_victim_on_fire": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	
+	"is_doll_on_fire": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_pyro_on_fire",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_pyro_on_fire",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[tag=VoodooDoll,predicate=inkbat:armorstand_onfire] if score @p[tag=Puppeteer] UUID_1 = @s PuppetOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s PuppetOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s PuppetOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s PuppetOwnerUUID4",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:voodoo_doll_visual",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	
+	"is_doll_on_max_fire": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_pyro_on_fire_max",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_pyro_on_fire_max",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "data get entity @e[tag=VoodooDoll,sort=nearest,limit=1] Fire",
+					"comparison": "==",
+					"compare_to": 160
+				},
+				{
+					"type": "origins:command",
+					"command": "execute as @e[tag=VoodooDoll,sort=nearest,limit=1] at @p[tag=Puppeteer] if score @p[tag=Puppeteer] UUID_1 = @s PuppetOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s PuppetOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s PuppetOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s PuppetOwnerUUID4",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:voodoo_doll_visual",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	
+	"is_player_victim_on_fire": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "data get entity @e[type=player,tag=PuppeteerVictim,sort=nearest,limit=1] Fire",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=player,tag=PuppeteerVictim] if score @p[tag=Puppeteer] UUID_1 = @s VictimOwnerUUID1 if score @p[tag=Puppeteer] UUID_2 = @s VictimOwnerUUID2 if score @p[tag=Puppeteer] UUID_3 = @s VictimOwnerUUID3 if score @p[tag=Puppeteer] UUID_4 = @s VictimOwnerUUID4",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	
+	"select_player_victim": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @s at @e[type=player,tag=PuppeteerVictim] if score @s UUID_1 = @p[tag=PuppeteerVictim] VictimOwnerUUID1 if score @s UUID_2 = @p[tag=PuppeteerVictim] VictimOwnerUUID2 if score @s UUID_3 = @p[tag=PuppeteerVictim] VictimOwnerUUID3 if score @s UUID_4 = @p[tag=PuppeteerVictim] VictimOwnerUUID4 run data modify entity @e[type=arrow,tag=Voodoo,sort=nearest,limit=1] Owner set from entity @s UUID",
+			"permission_level": 2
+		},
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @e[type=player,tag=PuppeteerVictim] if score @s UUID_1 = @p[tag=PuppeteerVictim] VictimOwnerUUID1 if score @s UUID_2 = @p[tag=PuppeteerVictim] VictimOwnerUUID2 if score @s UUID_3 = @p[tag=PuppeteerVictim] VictimOwnerUUID3 if score @s UUID_4 = @p[tag=PuppeteerVictim] VictimOwnerUUID4 run summon arrow ~ ~2.1 ~ {Tags:['Voodoo']}",
+					"permission_level": 2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_on_fire",
+							"comparison": "==",
+							"compare_to": 1
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+							"comparison": "==",
+							"compare_to": 0
+						}
+					]
+				},
+				{
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_doll_visual",
+							"comparison": "==",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+							"comparison": "==",
+							"compare_to": 1
+						}
+					]
+				},
+				{
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_on_fire",
+							"comparison": "==",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+							"comparison": "==",
+							"compare_to": 1
+						}
+					]
+				}
+			]
+		}
+	},
+	
+	"set_player_on_fire": {
+		"type": "origins:target_action_on_hit",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:set_on_fire",
+					"duration": 60
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_on_fire",
+							"comparison": "==",
+							"compare_to": 1
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:voodoo_pyro_on_fire_max",
+							"comparison": "==",
+							"compare_to": 1
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	
+	"extinguish_player": {
+		"type": "origins:target_action_on_hit",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:extinguish"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "inkbat:voodoo_pyro_player_victim_on_fire",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "botworigins:swords"
+            }
+        }
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": -0.3,
+        "name": "Sword attack multiplier"
+    },
+    "name": "Clumsy Sword User",
+    "description": "You aren't really good at using swords."
+}

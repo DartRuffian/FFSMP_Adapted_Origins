@@ -1,0 +1,21 @@
+{
+"type": "origins:invisibility",
+"render_armor": false,
+"condition": {
+"type": "origins:and",
+"conditions": [
+		{
+		"type": "origins:power_active",
+		"power": "raccoon:sneaky"
+		},
+		{    
+		"type": "origins:sneaking"
+		},
+		{
+		
+		}
+	]
+},
+   "name": "Hidden in Plain Sight",
+   "description": "Using the primary key while sneaking, you can go totally invisible in areas of shadow."
+}

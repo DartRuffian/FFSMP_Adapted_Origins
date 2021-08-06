@@ -1,0 +1,54 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Natural Armor health bonus",
+    "attribute": "minecraft:generic.armor",
+    "value": 4.0,
+    "operation": "addition"
+  },
+   "tick_rate": 20,
+  "condition": {
+	"type": "origins:and",
+		"conditions": [
+			
+				{
+				  "type": "origins:equipped_item",
+					"equipment_slot": "head",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{      
+				  "type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{
+				  "type": "origins:equipped_item",
+					"equipment_slot": "legs",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{
+				  "type": "origins:equipped_item",
+					"equipment_slot": "feet",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				}
+		]
+	},
+  "name": "Armor Master",
+    "description": "You get slightly more out of your armor "
+}

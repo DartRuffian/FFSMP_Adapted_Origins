@@ -1,0 +1,82 @@
+{
+	"type": "origins:modify_food",
+	"item_condition": {
+		"type": "origins:or",
+		"conditions": [{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:rotten_flesh"
+				}
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:spider_eye"
+				}
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:chicken"
+				}
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:pufferfish"
+				}
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:poisonous_potato"
+				}
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:suspicious_stew"
+				}
+			}
+		]
+	},
+	 "saturation_modifier": {
+        "name": "Increased saturation points",
+        "operation": "addition",
+        "value": 9
+    },
+	"entity_action": {
+		"type": "origins:delay",
+		"ticks": 1,
+		"action": {
+			"type": "origins:and",
+			"actions": [{
+					"type": "origins:apply_effect",
+					"effect": {
+						"effect": "minecraft:speed",
+						"duration": 300,
+						"amplifier": 1
+					}
+				},
+				{
+					"type": "origins:apply_effect",
+					"effect": {
+						"effect": "minecraft:strength",
+						"duration": 300,
+						"amplifier": 0
+					}
+				},
+				{
+					"type": "origins:apply_effect",
+					"effect": {
+						"effect": "minecraft:saturation",
+						"duration": 300,
+						"amplifier": 0
+					}
+				}
+			]
+		}
+	},
+	"name": "Trash eater",
+	"description": "You are now able to fully appreciate the full potential of these generally under appreciated foods"
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "origins": [
+     "possessed:possessed",
+	 "possessed:adapted_possessed"
+  ]
+}

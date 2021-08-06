@@ -1,0 +1,260 @@
+{
+	"name": "Ender Voodoo",
+	"description": "After locking onto a target and giving your voodoo doll an ender pearl, you can use G to teleport the target to your doll. This also works if you target yourself.",
+	
+	"type": "origins:multiple",
+	
+	"no_target_error_sound": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 0.7 1",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:voodoo_doll_target_lock_visual",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	
+	"target_in_different_dimension_error_sound": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:block.note_block.pling master @s ~ ~ ~ 0.7 0.5",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"name": "If self is in a different dimension...",
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "execute at @s[predicate=inkbat:world_overworld] as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=!inkbat:world_overworld,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @s[predicate=inkbat:world_nether] as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=!inkbat:world_nether,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @s[predicate=inkbat:world_end] as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=!inkbat:world_end,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						}
+					]
+				},
+				{
+					"name": "If targeted victim is in a different dimension...",
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_overworld,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim,predicate=!inkbat:world_overworld] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_nether,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim,predicate=!inkbat:world_nether] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_end,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim,predicate=!inkbat:world_end] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID4",
+							"comparison": "==",
+							"compare_to": "1"
+						}
+					]
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	
+	"teleport_self": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @e[tag=VoodooDoll,predicate=inkbat:teleport_pearl] if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 = @s UUID_1 if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 = @s UUID_2 if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 = @s UUID_3 if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 = @s UUID_4 run summon origins:enderian_pearl ~ ~ ~ {Tags:['Voodoo']}",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @s at @e[tag=VoodooDoll,predicate=inkbat:teleport_pearl] if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 = @s UUID_1 if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 = @s UUID_2 if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 = @s UUID_3 if score @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 = @s UUID_4 run data modify entity @e[type=origins:enderian_pearl,tag=Voodoo,sort=nearest,limit=1] Owner set from entity @s UUID",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.5 1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:execute_command",
+						"command": "execute at @s as @e[tag=VoodooDoll] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4 run data remove entity @s[predicate=inkbat:teleport_pearl] HandItems[0].id",
+						"permission_level": 2
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "execute at @s[predicate=inkbat:world_overworld] as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_overworld,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @s[predicate=inkbat:world_nether] as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_nether,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @s[predicate=inkbat:world_end] as @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_end,predicate=inkbat:teleport_pearl] if score @s PuppetOwnerUUID1 = @p[tag=Puppeteer] UUID_1 if score @s PuppetOwnerUUID2 = @p[tag=Puppeteer] UUID_2 if score @s PuppetOwnerUUID3 = @p[tag=Puppeteer] UUID_3 if score @s PuppetOwnerUUID4 = @p[tag=Puppeteer] UUID_4",
+							"comparison": "==",
+							"compare_to": "1"
+						}
+					]
+				},
+				{
+					"type": "origins:command",
+					"command": "execute as @s if score @s VictimOwnerUUID1 = @s UUID_1 if score @s VictimOwnerUUID2 = @s UUID_2 if score @s VictimOwnerUUID3 = @s UUID_3 if score @s VictimOwnerUUID4 = @s UUID_4",
+					"comparison": "==",
+					"compare_to": "1"
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	
+	"teleport_victim": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run summon origins:enderian_pearl ~ ~ ~ {Tags:['Voodoo']}",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run data modify entity @e[type=origins:enderian_pearl,tag=Voodoo,sort=nearest,limit=1] Owner set from entity @s UUID",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run playsound minecraft:entity.enderman.teleport master @a[distance=..10] ~ ~ ~ 0.3 1",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:execute_command",
+						"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1] PuppetOwnerUUID4 run data remove entity @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:teleport_pearl,sort=nearest,limit=1] HandItems[0].id",
+						"permission_level": 2
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_overworld,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim,predicate=inkbat:world_overworld] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_nether,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim,predicate=inkbat:world_nether] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID4",
+							"comparison": "==",
+							"compare_to": "1"
+						},
+						{
+							"type": "origins:command",
+							"command": "execute at @e[type=minecraft:armor_stand,tag=VoodooDoll,predicate=inkbat:world_end,predicate=inkbat:teleport_pearl] as @e[tag=PuppeteerVictim,predicate=inkbat:world_end] if score @s VictimOwnerUUID1 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID1 if score @s VictimOwnerUUID2 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID2 if score @s VictimOwnerUUID3 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID3 if score @s VictimOwnerUUID4 = @e[tag=VoodooDoll,sort=nearest,limit=1,predicate=inkbat:teleport_pearl] PuppetOwnerUUID4",
+							"comparison": "==",
+							"compare_to": "1"
+						}
+					]
+				},
+				{
+					"type": "origins:command",
+					"command": "execute as @s if score @s VictimOwnerUUID1 = @s UUID_1 if score @s VictimOwnerUUID2 = @s UUID_2 if score @s VictimOwnerUUID3 = @s UUID_3 if score @s VictimOwnerUUID4 = @s UUID_4",
+					"comparison": "==",
+					"compare_to": "0"
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	}
+}

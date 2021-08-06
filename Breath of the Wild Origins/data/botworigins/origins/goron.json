@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"botworigins:sturdy_body",
+		"botworigins:goron_arms",
+		"botworigins:goron_arms_break_speed",
+		"botworigins:death_mountain_resistance",
+		"botworigins:goron_ball_form",
+		"botworigins:heavy_body",
+		"origins:more_exhaustion",
+		"botworigins:sedimentary_rock",
+		"botworigins:goron_ball_speed",
+		"botworigins:goron_ball_miningfatigue",
+		"botworigins:goron_ball_no_tools"
+	],
+	"icon": "minecraft:granite",
+	"order": 0,
+	"impact": 1,
+    "name": "Goron",
+    "description": "From the Breath of the Wild Origins Pack. Gorons are a strong race that live in the mountains."
+}

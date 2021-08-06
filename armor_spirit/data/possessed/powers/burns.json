@@ -1,0 +1,61 @@
+{
+    "type": "origins:burn",
+    "interval": 20,
+    "burn_duration": 1,
+	"condition": {
+	"type": "origins:and",
+		"conditions": [
+			{
+			"type": "origins:or",
+			"conditions": [
+				{
+				  "type": "origins:equipped_item",
+					"equipment_slot": "head",
+					"inverted":true,
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{      
+				  "type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"inverted":true,
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{
+				  "type": "origins:equipped_item",
+					"equipment_slot": "legs",
+					"inverted":true,
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{
+				  "type": "origins:equipped_item",
+					"equipment_slot": "feet",
+					"inverted":true,
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				}
+			  ]
+			},
+			{
+			"type": "origins:exposed_to_sun"
+			}
+		]
+	},
+	"hidden": false,
+    "name": "Bound by Armor",
+    "description": "Barely held together by armor you take more blast damage and burn in the sun if you are missing any peice of armor"
+}

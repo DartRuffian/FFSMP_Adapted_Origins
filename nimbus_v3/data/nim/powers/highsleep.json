@@ -1,0 +1,12 @@
+{
+  "type": "origins:prevent_sleep",
+  "block_condition": {
+    "type": "origins:height",
+    "comparison": "<",
+    "compare_to": 100
+  },
+  "message": "origins.avian_sleep_fail",
+  "name": "Comfort Up Above",
+  "description": "Your cloudlike nature means you're only comfortable sleeping high up in the air"
+}
+	

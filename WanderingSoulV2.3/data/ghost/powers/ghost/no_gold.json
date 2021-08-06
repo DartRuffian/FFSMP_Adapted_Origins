@@ -1,0 +1,30 @@
+{
+    "type": "origins:restrict_armor",
+    "name": "Gold weakness",
+    "description": "Cannnot equip gold armor.",
+    "hidden": true,
+    "head": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:golden_helmet"
+	}
+    },
+    "chest": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:golden_chestplate"
+	}
+    },
+    "legs": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:golden_leggings"
+	}
+    },
+    "feet": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:golden_boots"
+	}		
+    }
+}

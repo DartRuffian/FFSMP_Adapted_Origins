@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"botworigins:guardian_laser",
+		"botworigins:six_legged",
+		"botworigins:metal_plating",
+		"botworigins:guardian_vision",
+		"botworigins:rusty_body",
+		"botworigins:melty_body",
+		"botworigins:short_circuit_body"
+	],
+	"icon": "minecraft:iron_ingot",
+	"order": 0,
+	"impact": 1,
+    "name": "Guardian Stalker",
+    "description": "From the Breath of the Wild Origins Pack. Being half guardian has its benefits. You are half robot."
+}

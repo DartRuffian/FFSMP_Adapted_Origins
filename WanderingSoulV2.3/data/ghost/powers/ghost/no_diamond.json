@@ -1,0 +1,30 @@
+{
+    "type": "origins:restrict_armor",
+    "name": "Diamond weakness",
+    "description": "Cannnot equip diamond armor.",
+    "hidden": true,
+    "head": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:diamond_helmet"
+	}
+    },
+    "chest": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:diamond_chestplate"
+	}
+    },
+    "legs": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:diamond_leggings"
+	}
+    },
+    "feet": {
+        "type": "origins:ingredient",
+            "ingredient":{
+            "item": "minecraft:diamond_boots"
+	}		
+    }
+}

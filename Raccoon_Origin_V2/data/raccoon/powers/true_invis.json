@@ -1,0 +1,63 @@
+{
+"type": "origins:multiple",
+"invis":{
+"type": "origins:invisibility",
+"render_armor": false,
+"condition": {
+"type": "origins:and",
+"conditions": [
+	{
+		"type": "origins:power_active",
+		"power": "raccoon:sneaky"
+		},
+		{
+		    "type": "origins:resource",
+                    "resource": "raccoon:true_invis_hit",
+                    "comparison": ">",
+                    "compare_to": 120
+	}
+]
+}
+},
+"hit": {
+	"type": "origins:resource",
+	"min": 0,
+	"max": 240,
+	"start_value": 240,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+		"bar_index": 9,
+		"condition": {
+			"type": "origins:power_active",
+			"power": "raccoon:sneaky"
+		}
+	}
+},
+"cooldown": {
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:change_resource",
+		"resource": "raccoon:true_invis_hit",
+		"change": 1
+	},
+	"interval": 1,
+	"condition": {
+		"type": "origins:resource",
+		"resource": "raccoon:true_invis_hit",
+		"comparison": "<",
+		"compare_to": 240
+	}
+},
+"zero": {
+	"type": "origins:self_action_when_hit",
+	"entity_action": {
+    "type": "origins:change_resource",
+    "resource": "raccoon:true_invis_hit",
+    "change": -40
+}
+},
+	
+ "name": "Hidden in Plain Sight",
+   "description": "Using the primary key while sneaking, you can go totally invisible in areas of shadow."
+}

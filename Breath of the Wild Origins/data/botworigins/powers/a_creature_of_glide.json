@@ -1,0 +1,6 @@
+{
+    "type": "origins:elytra_flight",
+    "render_elytra": true,
+    "name": "Gliding Master",
+    "description": "You have a pair of wings, gliding is real easy for you now."
+}

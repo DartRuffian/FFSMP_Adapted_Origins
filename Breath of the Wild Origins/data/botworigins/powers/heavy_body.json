@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Bulky",
+    "attribute": "minecraft:generic.movement_speed",
+    "value": -0.6,
+    "operation": "multiply_total"
+  },
+  "name": "Heavy Body",
+  "description": "Your heaviness weighs you down and you become very slow."
+}

@@ -1,0 +1,9 @@
+{
+"type": "origins:burn",
+    "interval": 20,
+    "burn_duration": 1,
+    "condition": {
+	 "type": "origins:dimension",
+    "dimension": "minecraft:the_nether"
+    }
+}
