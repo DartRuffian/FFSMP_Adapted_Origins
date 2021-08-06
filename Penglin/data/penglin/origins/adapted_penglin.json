@@ -17,5 +17,5 @@
 	"impact": 2,
 	"name": "Adapted Penglin",
 	"description": "After defeating the Ender Dragon, you become even more mischievous!",
-	"unchoosable": false
-}
+	"unchoosable": true
+}	
