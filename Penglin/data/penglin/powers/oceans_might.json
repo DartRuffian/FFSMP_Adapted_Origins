@@ -1,20 +1,43 @@
 {
-  "type": "origins:conditioned_attribute",
-  "modifiers": {
-    "attribute": "minecraft:generic.attack_damage",
-    "operation": "addition_base",
-    "value": 5
-  },
+  "name": "Ocean's Might",
+  "description": "penglin:oceans_might.description",
+  "type": "origins:modify_damage_dealt",
   "condition": {
-        "type": "origins:equipped_item",
-        "equipment_slot": "mainhand",
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient":{
-            "tag": "penglin:ocean_weapons"
-            }
+    "type": "origins:equipped_item",
+    "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": [
+          {
+            "item": "minecraft:trident"
+          },
+          {
+            "item": "mcdw:sword_coral_blade"
+          },
+          {
+            "item": "mcdw:sword_sponge_striker"
+          },
+          {
+            "item": "mcdw:axe_anchor"
+          },
+          {
+            "item": "mcdw:axe_encrusted_anchor"
+          },
+          {
+            "item": "mcdw:bow_guardian_bow"
+          },
+          {
+            "item": "mcdw:crossbow_nautical_crossbow"
+          },
+          {
+            "item": "mcdw:crossbow_harpoon_crossbow"
           }
-      },
-  "name": "Oceans Might",
-  "description": "Killing the Dragon has honed your skills with weapons from the ocean."
+        ]
+      }
+  },
+  "modifier": {
+    "name": "Extra damage using ocean weapons",
+    "operation": "addition",
+    "value": 5.0
+  }
 }
