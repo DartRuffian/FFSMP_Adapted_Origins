@@ -1,0 +1,32 @@
+{
+	"type": "origins:action_on_block_break",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [{
+				"type": "origins:chance",
+				"action": {
+					"type": "origins:and",
+					"actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:gold_ingot 3",
+              "permission_level": 4
+          },
+          {
+              "type": "origins:execute_command",
+              "command": "kill @e[type=item,nbt={Item:{id:\"minecraft:gold_ore\"}}, distance=..4]",
+              "permission_level": 4
+          }
+        ]
+				},
+				"chance": 1
+			}
+		]
+	},
+  "block_condition":{
+    "type":"origins:block",
+    "block":"minecraft:gold_ore"
+  },
+	"name": "Greedy",
+	"description": "Your greed manifests"
+}

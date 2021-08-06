@@ -1,0 +1,92 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+        "type": "origins:and",
+        "actions": [
+		{
+			"type": "origins:damage",
+			"amount": 6,
+			"source": {
+				"name": "Blood Sacrifice"
+			}
+		},{
+    "type": "origins:apply_effect",
+	"effects":[
+	{
+		"effect": "minecraft:resistance",
+		"is_ambient": true,
+		"amplifier": 1,
+		"show_particle": false,
+		"show_icon": true,
+		"duration": 450
+	},
+	{
+		"effect": "minecraft:speed",
+		"amplifier": 2,
+		"is_ambient": true,
+		"show_particle": false,
+		"show_icon": true,
+		"duration": 450
+	},
+	{
+		"effect": "minecraft:strength",
+		"is_ambient": true,
+		"show_particle": false,
+		"show_icon": true,
+		"duration": 450
+	}]
+		},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.phantom.bite"
+			},
+			{
+		    	"type": "origins:execute_command",
+		    	"command": "effect give @e[distance=..4,tag=!demon] minecraft:instant_damage 1 3",
+		    	"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "effect give @e[distance=..4,tag=demon] minecraft:instant_health 1 1",
+				"permission_level": 4
+    		},
+			{
+		    	"type": "origins:execute_command",
+		    	"command": "effect give @e[distance=..4] minecraft:wither 1",
+		    	"permission_level": 4
+    		},
+  			{
+		    	"type": "origins:execute_command",
+		    	"command": "particle minecraft:crimson_spore ~ ~1 ~ 0 0.3 0 1 150 normal",
+		    	"permission_level": 4
+    		},
+			{
+		    	"type": "origins:execute_command",
+		    	"command": "particle minecraft:damage_indicator ~ ~1 ~ 0 0.3 0 1.5 20 normal",
+		    	"permission_level": 4 
+    		}]},
+  "cooldown": 445,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+    "bar_index": 5
+  },
+  "condition": {
+		"type": "origins:and",
+		"conditions": [{
+			"type": "origins:resource",
+			"resource": "caldera:demon_adapt/kill_count_adapt",
+			"comparison": ">=",
+			"compare_to": 100
+	},{
+		"type": "origins:health",
+    "comparison": ">",
+    "compare_to": 6
+	}
+	]},
+  "key":{
+	"key": "key.origins.secondary_active"
+  },
+  "name": "Blood Demon Art",
+    "description": "[Secondary]\nBlood Compass: Once you kill count reaches 100, you gain the ability splatter your own blood to area around you, affecting 40 damage to entities around you and receive Strength I, speed 3 and Resistance 2 buff."
+}

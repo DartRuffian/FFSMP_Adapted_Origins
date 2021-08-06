@@ -1,0 +1,38 @@
+{
+    "type": "origins:multiple",
+    "space": {
+        "type": "origins:modify_harvest",
+        "allow": true,
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "dragon:natural_stone"
+        }
+    },
+"damage": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "multiply_total",
+        "value": 2
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:air"
+                    }
+                }
+            }
+        ]
+    }
+    },
+    "hidden": false,
+    "name": "Diamond claws",
+    "description": "Due to your diamond claws you are able to break stone as well as double damage"
+}

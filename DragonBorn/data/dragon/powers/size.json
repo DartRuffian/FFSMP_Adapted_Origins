@@ -1,0 +1,20 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 1.25",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 1",
+          "permission_level": 4
+        }
+        ]
+    },
+    "name": "Big boy",
+    "description": "2.5 blocks tall"
+}

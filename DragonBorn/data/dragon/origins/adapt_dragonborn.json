@@ -1,0 +1,25 @@
+{
+	"powers": [
+		"dragon:endflight",
+		"dragon:greedy",
+		"dragon:scales",
+		"dragon:hungy",
+		"dragon:claw",
+		"dragon:size",
+		"dragon:effect",
+		"dragon:home",
+		"dragon:weakpoint",
+		"dragon:crystal",
+		"dragon:crystal2",
+		"dragon:mob",
+		"dragon:draconicbreath",
+		"origins:carnivore",
+		"toomanyorigins:no_knockback"
+	],
+	"icon": "minecraft:dragon_breath",
+	"order": 10,
+	"impact": 2,
+	"unchoosable": true,
+	"name": "Adapted dragonborn",
+	"description": "A quarter human a quarter void and a half dragon you have slain the dragon and taken its unique essence of the void granting even stronger abilities"
+}

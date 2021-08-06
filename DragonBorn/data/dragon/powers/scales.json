@@ -1,0 +1,12 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "health addition",
+      "attribute": "minecraft:generic.max_health",
+      "value": 10.0,
+      "operation": "addition"
+    },
+    "tickrate": 20,
+    "name": "Full Grown Scales",
+    "description":"You have grown up and adopted your fully grown scales"
+  }

@@ -1,0 +1,45 @@
+{
+    "hidden": false,
+    "type": "origins:stacking_status_effect",
+    "name": "Crystal Chrysalis",
+    "description": "Whenever your near an end crystal you gain regeneration 2 resistance 4 but also gain slowwness 4 blindness 4 and 3x damage from explosions",
+    "effects": [
+        {
+            "effect": "minecraft:regeneration",
+            "show_particles": false,
+            "amplifier": 1,
+            "show_icon": false,
+            "duration": 20
+        },
+        {
+            "effect": "minecraft:resistance",
+            "show_particles": false,
+            "amplifier": 3,
+            "show_icon": false,
+            "duration": 20
+        },
+        {
+            "effect": "minecraft:blindness",
+            "show_particles": false,
+            "amplifier": 3,
+            "show_icon": false,
+            "duration": 20
+        },
+        {
+            "effect": "minecraft:slowness",
+            "show_icon": false,
+            "amplifier": 3,
+            "show_particles": false
+        }
+    ],
+    "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @e[type=#minecraft:crystal,distance=..10]",
+        "compare_to": 0,
+        "comparison": ">",
+        "inverted": false
+    },
+    "duration_per_stack": 40,
+    "min_stacks": 0,
+    "max_stacks": 1
+}

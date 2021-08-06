@@ -1,0 +1,14 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "explosion"
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 3
+    },
+    "hidden": true,
+    "name": "Weakpoint",
+    "description": "Your body has grown in strengths and flaws"
+}

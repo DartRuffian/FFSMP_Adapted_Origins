@@ -1,0 +1,46 @@
+{
+	"type": "origins:target_action_on_hit",
+	"hud_render": {
+		"should_render": false
+	},
+    "entity_action": {
+		"type": "origins:and",
+		"actions": [  
+		{
+		  "type": "origins:execute_command",
+		  "command": "tag @s add demon",
+		  "permission_level": 4
+		},
+		 {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join demon @s"
+            },
+        {
+            "type": "origins:delay",
+                  "ticks": 3600,
+                  "action": {
+                      "type": "origins:and",
+                      "actions": {
+                           "type": "origins:execute_command",
+                           "command": "tag @s remove demon",
+                           "permission_level": 4
+            }
+          } 
+        }
+    ]
+    },
+    "cooldown": 10,
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "mainhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:stick"
+			}
+		}
+	},
+	"name": "Tag allies",
+	"description": "You can tag your allies by punching them with a stick. They will be unnafected and healed by the blood demon art."
+}

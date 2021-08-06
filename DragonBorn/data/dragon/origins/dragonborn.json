@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"toomanyorigins:dragon_breath",
+		"origins:carnivore",
+		"toomanyorigins:no_knockback",
+		"toomanyorigins:weak_point",
+		"toomanyorigins:zenith_scales",
+		"dragon:reset"
+	],
+	"icon": "minecraft:dragon_breath",
+	"order": 7,
+	"impact": 1,
+    "unchoosable": false,
+    "name": "Dragonborn",
+    "description": "DON'T CHOOSE THE OTHER DRAGONBORN THAT ONE DOESNT ADAPT",
+    "upgrades":{
+        "condition": "minecraft:end/kill_dragon",
+        "origin": "dragon:adapt_dragonborn",
+        "announcement": "You have evolved... Best check your origin again..."
+    }
+}

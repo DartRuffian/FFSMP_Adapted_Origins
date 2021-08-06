@@ -1,0 +1,53 @@
+{
+    "hud_render": {
+        "should_render": false,
+        "bar_index": 2
+    },
+    "cooldown": 1,
+    "tick_rate": 1,
+    "interval": 10,
+    "type": "origins:action_over_time",
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_end",
+                "inverted": true
+            },
+            {
+                "type": "origins:block_in_radius",
+                "block_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "dragon:end_stuff"
+                },
+                "inverted": true,
+                "radius": 20
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:weakness",
+                "amplifier": 1,
+                "duration": 20,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:slowness",
+                "amplifier": 0,
+                "duration": 20,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ]
+    },
+    "hidden": false,
+    "name": "Homesick",
+    "description": "Whenever not within 20 blocks of an end related block be cursed with weakness 2 and slowness 1."
+}

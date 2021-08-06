@@ -1,0 +1,46 @@
+{
+    "hud_render": {
+        "should_render": false,
+        "bar_index": 2
+    },
+    "cooldown": 1,
+    "tick_rate": 1,
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_end"
+    },
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:strength",
+                "amplifier": 3,
+                "duration": 40,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:speed",
+                "amplifier": 3,
+                "duration": 40,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:resistance",
+                "is_ambient": true,
+                "duration": 40,
+                "amplifier": 1,
+                "show_icon": true,
+                "show_particles": false
+            }
+        ]
+    },
+    "hidden": false,
+    "name": "Mother's Blessing",
+    "description": "The end gives you strength, speed, and resistance"
+}
