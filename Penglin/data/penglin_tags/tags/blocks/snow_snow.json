@@ -8,6 +8,8 @@
 		"minecraft:snow_block",
 		"minecraft:snow",
 		"byg:frost_magma",
+		"byg:black_ice",
+		"byg:packed_black_ice",
 		"terrarianslimes:ice_slime_block"
 	]
 }
