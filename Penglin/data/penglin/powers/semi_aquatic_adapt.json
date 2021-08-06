@@ -1,5 +1,5 @@
 {
-	"name": "Semi-Aquatic",
+	"name": "Semi-Aquatic Plus",
 	"description": "You have increased swim speed, clear water vision, and can hold your breath longer than normal.",
     "type": "origins:multiple",
 	"swim_speed": {

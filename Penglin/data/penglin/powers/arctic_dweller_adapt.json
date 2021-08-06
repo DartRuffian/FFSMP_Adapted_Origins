@@ -1,6 +1,6 @@
 {
   "type": "origins:stacking_status_effect",
-  "name": "Arctic Dweller",
+  "name": "Arctic Dweller Plus",
   "description": "You gain strength and resistance in cold biomes.",
   "min_stacks": -10,
   "max_stacks": 3,
