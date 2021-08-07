@@ -1,6 +1,6 @@
 {
   "name": "Ocean's Might",
-  "description": "penglin:oceans_might.description",
+  "description": "Defeating the Ender Dragon has allowed you to unlock the potential in many weapons. You now deal extra damage with ocean themed weapons.",
   "type": "origins:modify_damage_dealt",
   "condition": {
     "type": "origins:equipped_item",
