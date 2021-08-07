@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"toomanyorigins:wither_toxins"
+	],
+	"icon": "minecraft:wither_rose",
+	"order": 7,
+	"impact": 1,
+    "unchoosable": false,
+    "name": "Wither",
+    "description": "Truly toxic",
+    "upgrades":{
+        "condition": "minecraft:end/kill_dragon",
+        "origin": "wither:adaptwithered",
+        "announcement": "You have evolved... Best check your origin again..."
+    }
+}
