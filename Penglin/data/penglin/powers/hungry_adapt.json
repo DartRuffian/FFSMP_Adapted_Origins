@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "addition",
+        "value": 0.1
+    },
+    "name": "Voracious Appetite",
+    "description": "After slaying the draon you feel as none of your food satiates you."
+}
