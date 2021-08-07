@@ -1,0 +1,71 @@
+{
+    "type": "origins:multiple",
+    "cold_time":{
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1800,
+		"hud_render": {
+			"should_render": false
+		}
+    },
+    "cold_timer":{
+		"type": "origins:action_over_time",
+    	"entity_action": {
+        	"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "celestial:phasing_resource_toggle",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			"if_action": {
+					"type": "origins:change_resource",
+					"resource": "penglin:migrate_cold_time",
+					"change": 1
+			},
+			"else_action": {
+					"type": "origins:change_resource",
+					"resource": "penglin:migrate_cold_time",
+					"change": -1
+			}
+    	},
+    	"interval": 20
+    },
+    "cold_hunger":{
+
+    },
+    "hot_time":{
+		"type": "origins:resource",
+		"min": 0,
+		"max": 600,
+		"hud_render": {
+			"should_render": false
+		}
+    },
+    "hot_timer":{
+		"type": "origins:action_over_time",
+    	"entity_action": {
+        	"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "celestial:phasing_resource_toggle",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			"if_action": {
+					"type": "origins:change_resource",
+					"resource": "penglin:migrate_cold_time",
+					"change": 1
+			},
+			"else_action": {
+					"type": "origins:change_resource",
+					"resource": "penglin:migrate_cold_time",
+					"change": -1
+			}
+    	},
+    	"interval": 20
+    },
+    "hot_hunger":{
+    	
+    }
+}
