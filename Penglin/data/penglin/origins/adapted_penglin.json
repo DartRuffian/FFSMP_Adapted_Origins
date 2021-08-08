@@ -11,7 +11,8 @@
 		"penglin:smol_peng",
 		"penglin:icy_aura",
 		"penglin:oceans_might",
-		"penglin:hungry_adapt"
+		"penglin:hungry_adapt",
+		"penglin:migrate"
 	],
 	"icon": "minecraft:blue_ice",
 	"order": 10,
