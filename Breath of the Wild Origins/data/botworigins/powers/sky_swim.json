@@ -1,24 +1,24 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
     "fly": {
       "type": "origins:swimming",
       "condition": {
         "type":"origins:and",
         "conditions": [
           {
-             "type": "origins:equipped_item",
-  "equipment_slot": "offhand",
-  "item_condition": {
-     "type": "origins:enchantment",
-    "enchantment": "minecraft:luck_of_the_sea",
-    "comparison": "==",
-    "compare_to": 5
-  }
+            "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:enchantment",
+                "enchantment": "minecraft:luck_of_the_sea",
+                "comparison": "==",
+                "compare_to": 5
+            }
           }
         ]
       }
     },
 	"hidden": true,
-    "name": "Phantom Sail",
-    "description": "Slaying the dragon has granted you the ability of flight while phantomized."
+  "name": "Phantom Sail",
+  "description": "Slaying the dragon has granted you the ability of flight while phantomized."
   }

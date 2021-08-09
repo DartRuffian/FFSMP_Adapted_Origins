@@ -30,7 +30,7 @@
 			"else_action": {
 					"type": "origins:change_resource",
 					"resource": "penglin:migrate_cold_time",
-					"change": -1
+					"change": -1800
 			}
     	},
     	"interval": 20
@@ -83,7 +83,7 @@
 			"else_action": {
 					"type": "origins:change_resource",
 					"resource": "penglin:migrate_hot_time",
-					"change": -1
+					"change": -600
 			}
     	},
     	"interval": 20

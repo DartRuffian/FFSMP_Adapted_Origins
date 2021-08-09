@@ -1,29 +1,38 @@
 {
-    "type": "origins:starting_equipment",
-    "stacks": [
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:apply_effect",
+  "effect": {
+    "effect": "minecraft:instant_damage",
+    "duration": 5,
+    "amplifier": 1
+  }
+    },
+    "interval": 600,
+    "condition": {
+        "type":"origins:and",
+        "conditions": [
         {
-            "item": "mcda:phantom_armor_helmet",
-            "amount": 1,
-            "slot": 39
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:writable_book"
+                }
+            }
         },
         {
-            "item": "mcda:phantom_armor_chestplate",
-            "amount": 1,
-            "tag": "{display: {color: 16383998}}",
-            "slot": 38
-        },
-        {
-            "item": "mcda:phantom_armor_leggings",
-            "amount": 1,
-            "tag": "{display: {color: 16383998}}",
-            "slot": 37
-        },
-        {
-            "item": "mcda:phantom_armor_boots",
-            "amount": 1,
-            "tag": "{display: {color: 16383998}}",
-            "slot": 36
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:enchantment",
+                "enchantment": "minecraft:efficiency",
+                "comparison": "==",
+                "compare_to": 10
+            }
         }
-    ],
-	"recurrent": true
+        ]
+    },
+    "hidden": true
 }

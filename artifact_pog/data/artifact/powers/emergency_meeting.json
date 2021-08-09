@@ -7,13 +7,29 @@
 	},
 	"interval": 20,
 	"condition": {
-		"type": "origins:equipped_item",
-		"equipment_slot": "offhand",
-		"item_condition": {
-			"type": "origins:ingredient",
-			"ingredient": {
-				"item": "minecraft:dirt"
+		"type":"origins:and",
+        "conditions": [
+        {
+			"type": "origins:equipped_item",
+			"equipment_slot": "offhand",
+			"item_condition": {
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:player_head"
+				}
 			}
+		},
+		{
+			"type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:enchantment",
+                "enchantment": "minecraft:soul_speed",
+                "comparison": "==",
+                "compare_to": 5 
+            }
 		}
-	}
+		]
+	},
+	"hidden": true
 }
