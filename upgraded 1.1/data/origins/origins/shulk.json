@@ -5,8 +5,7 @@
 		"origins:strong_arms",
 		"origins:strong_arms_break_speed",
 		"origins:no_shield",
-		"origins:more_exhaustion",
-		"roubar:reset"
+		"origins:more_exhaustion"
 	],
 	"icon": {
 		"item": "minecraft:shulker_shell"

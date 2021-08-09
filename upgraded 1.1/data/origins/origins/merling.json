@@ -7,8 +7,7 @@
 		"origins:like_water",
 		"origins:aquatic",
 		"origins:conduit_power_on_land",
-		"origins:air_from_potions",
-		"roubar:reset"
+		"origins:air_from_potions"
 	],
 	"icon": {
 		"item": "minecraft:cod"

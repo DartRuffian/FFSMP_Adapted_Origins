@@ -6,8 +6,7 @@
 		"origins:invisibility",
 		"origins:burn_in_daylight",
 		"origins:hunger_over_time",
-		"origins:fragile",
-		"roubar:reset"
+		"origins:fragile"
 	],
 	"icon": {
 		"item": "minecraft:phantom_membrane"

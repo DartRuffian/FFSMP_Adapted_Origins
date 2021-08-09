@@ -2,7 +2,8 @@
 	"powers": [
 	        "artifact:no_accdental_head_place",
 			"artifact:emergency_meeting",
-			"artifact:cancer"
+			"artifact:cancer",
+			"artifact:earth_charm"
 	],
 	"icon": "minecraft:compass",
 	"unchoosable": false,

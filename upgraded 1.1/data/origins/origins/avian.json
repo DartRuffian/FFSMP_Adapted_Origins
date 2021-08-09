@@ -4,8 +4,7 @@
 		"origins:fresh_air",
 		"origins:tailwind",
 		"origins:lay_eggs",
-		"origins:vegetarian",
-		"roubar:reset"
+		"origins:vegetarian"
 	],
 	"icon": {
 		"item": "minecraft:feather"

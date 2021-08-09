@@ -4,8 +4,7 @@
 		"origins:master_of_webs",
 		"origins:carnivore",
 		"origins:fragile",
-		"origins:arthropod",
-		"roubar:reset"
+		"origins:arthropod"
 	],
 	"icon": {
 		"item": "minecraft:cobweb"

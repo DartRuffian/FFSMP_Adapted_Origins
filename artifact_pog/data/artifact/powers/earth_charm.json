@@ -1,0 +1,112 @@
+{
+	"type": "origins:multiple",
+	"time":{
+		"type": "origins:resource",
+   		"min": 0,
+    	"max": 120,
+    	"hud_render": {
+        	"should_render": true,
+        	"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        	"condition":{
+        		"type": "origins:resource",
+    			"resource": "artifact:earth_charm_time",
+    			"comparison": "==",
+    			"compare_to": 0,
+    			"inverted": true
+        	}
+    	}
+	},
+	"timer":{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+    		"resource": "artifact:earth_charm_time",
+    		"change": -1
+		},
+		"interval": 20
+	},
+	"resist":{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:apply_effect",
+    	    "effect": {
+    	        "effect": "minecraft:resistance",
+    	        "duration": 600,
+    	        "amplifier": 4
+			}
+		},
+		"interval": 20,
+		"condition": {
+			"type":"origins:and",
+       		"conditions": [
+        	{
+				"type": "origins:equipped_item",
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:player_head"
+					}
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+        	    "equipment_slot": "offhand",
+        	    "item_condition": {
+        	        "type": "origins:enchantment",
+        	        "enchantment": "minecraft:protection",
+        	        "comparison": "==",
+        	        "compare_to": 5 
+        	    }
+			},
+			{
+				"type": "origins:resource",
+    			"resource": "artifact:earth_charm_time",
+    			"comparison": "==",
+    			"compare_to": 0
+			}
+			]
+		}
+	},
+	"timer_reset":{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+   			"resource": "artifact:earth_charm_time",
+   			"change": 120
+		},
+		"interval": 20,
+		"condition": {
+			"type":"origins:and",
+       		"conditions": [
+        	{
+				"type": "origins:equipped_item",
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:player_head"
+					}
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+        	    "equipment_slot": "offhand",
+        	    "item_condition": {
+        	        "type": "origins:enchantment",
+        	        "enchantment": "minecraft:protection",
+        	        "comparison": "==",
+        	        "compare_to": 5 
+        	    }
+			},
+			{
+				"type": "origins:resource",
+    			"resource": "artifact:earth_charm_time",
+    			"comparison": "==",
+    			"compare_to": 0
+			}
+			]
+		}
+	},
+	"hidden": true
+}

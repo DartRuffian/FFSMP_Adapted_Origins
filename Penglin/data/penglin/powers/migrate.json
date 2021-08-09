@@ -101,7 +101,7 @@
     	"interval": 20,
     	"condition":{
     		"type": "origins:resource",
-		    "resource": "penglin:migrate_cold_time",
+		    "resource": "penglin:migrate_hot_time",
     		"comparison": "==",
     		"compare_to": 600
     	}

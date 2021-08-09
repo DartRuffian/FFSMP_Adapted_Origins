@@ -5,8 +5,7 @@
 		"origins:nine_lives",
 		"origins:weak_arms",
 		"origins:scare_creepers",
-		"origins:cat_vision",
-		"roubar:reset"
+		"origins:cat_vision"
 	],
 	"icon": {
 		"item": "minecraft:orange_wool"
