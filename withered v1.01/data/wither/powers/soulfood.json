@@ -1,0 +1,21 @@
+{
+	"type": "origins:self_action_on_hit",
+		"entity_action": {
+			"type": "origins:feed",
+			"food": 2,
+			"saturation": 0
+		},
+		"target_condition": {
+			"type": "origins:entity_type",
+			"entity_type": "minecraft:player",
+			"inverted": true
+		},
+	"hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 4
+    },
+    "cooldown": 5,
+	"name": "Soul food",
+	"description": "You gain a bar of hunger on hit"
+}

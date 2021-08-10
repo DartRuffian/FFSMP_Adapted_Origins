@@ -1,0 +1,15 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "arrow"
+  },
+  "condition": {
+    "type": "origins:relative_health",
+    "comparison": "<=",
+    "compare_to": 0.5
+  },
+  "hidden": false,
+  "name": "Undead Resistance",
+  "description": "Immune to arrows at half health."
+}

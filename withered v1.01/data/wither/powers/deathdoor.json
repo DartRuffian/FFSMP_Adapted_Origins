@@ -1,0 +1,36 @@
+{
+    "type":"origins:multiple",
+    "half": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.1,
+            "name": "Speed at half health"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:relative_health",
+            "comparison": "<=",
+            "compare_to": 0.5
+        }
+    },
+    "quarter": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "addition",
+            "value": 6,
+            "name": "Attack at quarter health"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:relative_health",
+            "comparison": "<=",
+            "compare_to": 0.25
+        }
+    },
+    "hidden": false,
+    "name": "Death's Door",
+    "description": "Due to your close relationship with death at half health you gain more speed and at a quarter HP you gain +6 attack damage"
+}

@@ -1,0 +1,24 @@
+{
+	"powers": [
+		"wither:wither_toxinss",
+		"wither:beacon",
+		"wither:effects",
+		"wither:soulhungry",
+		"wither:headcannon",
+		"wither:famished",
+		"wither:deathdoor",
+		"wither:soulfood",
+		"origins:nether_spawn",
+		"toomanyorigins:black_thumb",
+		"toomanyorigins:scorched_structure",
+		"wither:soul_shield",
+		"toomanyorigins:wither_immunity",
+		"wither:unholy"
+	],
+	"icon": "minecraft:wither_rose",
+	"order": 10,
+	"impact": 2,
+	"unchoosable": true,
+	"name": "Adapted withered",
+	"description": "Truly toxic."
+}

@@ -1,0 +1,7 @@
+{
+    "type": "origins:entity_group",
+    "group": "undead",
+    "hidden": false,
+    "name": "Unholy",
+    "description": "Smiteable"
+  }

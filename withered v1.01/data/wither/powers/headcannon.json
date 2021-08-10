@@ -1,0 +1,39 @@
+{
+    "name": "Head cannon",
+    "description": "Shoots a withering skull",
+    "type": "origins:multiple",
+      "fire": {
+     "type": "origins:fire_projectile",
+      "cooldown": 1,
+      "hud_render": {
+      "should_render": false,
+      "bar_index": 5,
+      "key": "primary"
+     },
+      "condition": {
+        "type": "origins:food_level",
+        "comparison": "==",
+        "compare_to": 0,
+        "inverted": true
+      },
+      "entity_type": "minecraft:wither_skull",
+      "sound": "minecraft:entity.wither.shoot",
+      "speed": 1,
+      "divergence": 0
+     },
+      "starve": {
+      "type": "origins:active_self",
+      "entity_action":{
+        "type": "origins:exhaust",
+        "amount": 2.2
+      },
+      "hud_render":{
+        "should_render": false
+      },
+      "cooldown": 1,
+      "condition": {
+        "type": "origins:power_active",
+        "power": "wither:headcannon_fire"
+      }
+    }
+  }

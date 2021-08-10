@@ -1,0 +1,39 @@
+{
+    "type": "origins:action_over_time",
+      "entity_action": {
+	  "type": "origins:apply_effect",
+		"effects": [{
+			"effect": "minecraft:weakness",
+			"duration": 600,
+			"amplifier": 2,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": true
+        },
+        {
+            "effect": "minecraft:slowness",
+			"duration": 600,
+			"amplifier": 2,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": true
+        },
+        {
+            "effect": "minecraft:nausea",
+			"duration": 600,
+			"amplifier": 2,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": true
+          }]
+        },
+          "interval": 20,
+    "condition": {
+      "type": "origins:food_level",
+      "comparison": "<=",
+      "compare_to": 10
+    },
+    "hidden": false,
+    "name": "Famished",
+    "description": "When below half hunger, you gain weakness 3, slowness 3, and nausea 3 for 30 seconds."
+  }
