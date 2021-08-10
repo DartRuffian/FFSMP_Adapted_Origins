@@ -42,16 +42,10 @@
             "key": "key.origins.primary_active",
             "continuous": false
         },
-        "conditions":[
-            {
-            "type": "origins:power_active",
-            "power":"dragon:endflight_toggle"
-            },
-            {
+        "condition":{
                 "type":"origins:dimension",
                 "dimension":"minecraft:the_end"
-            }
-        ]
+    }
     },
     "idle": {
         "type": "origins:action_over_time",
@@ -95,7 +89,9 @@
         "hud_render": {
             "should_render": false
         },
-        "conditions":[
+        "condition":{
+            "type": "origins:and",
+            "conditions":[
             {
             "type": "origins:power_active",
             "power":"dragon:endflight_toggle"
@@ -105,6 +101,7 @@
                 "dimension":"minecraft:the_end"
             }
         ]
+    }
     },
     "knockback": {
         "type": "origins:conditioned_attribute",
