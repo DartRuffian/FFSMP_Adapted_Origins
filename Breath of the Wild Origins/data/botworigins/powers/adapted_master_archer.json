@@ -1,0 +1,14 @@
+{
+    "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+        "type": "origins:projectile",
+        "projectile": "minecraft:arrow"
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 3
+    },
+    "hidden": false,
+    "name": "Champions Weaponry",
+    "description": "You deal triple damage with all bows and on every hit you summon two arrows above your enemy."
+}

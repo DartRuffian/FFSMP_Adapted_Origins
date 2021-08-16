@@ -12,5 +12,10 @@
 	"order": 0,
 	"impact": 1,
     "name": "Rito",
-    "description": "From the Breath of the Wild Origins Pack. Being half rito is pretty nice. Also, I wonder, does that mean Big Bird is your cousin?"
+    "description": "From the Breath of the Wild Origins Pack. Being half rito is pretty nice. Also, I wonder, does that mean Big Bird is your cousin?",
+	"upgrades":{
+        "condition": "minecraft:end/kill_dragon",
+        "origin": "botworigins:adapted_rito",
+        "announcement": "You have evolved... Best check your origin again..."
+    }
 }

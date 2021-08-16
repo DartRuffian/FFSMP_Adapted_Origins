@@ -1,0 +1,32 @@
+{
+    "type": "origins:active_self",
+        "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:slowness",
+            "duration": 100,
+            "amplifier": 7
+        }
+        },
+        "cooldown": 5,
+        "hud_render": {
+            "should_render": false
+        },
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+        "ingredient": {
+            "tag": "botworigins:bow"
+        }
+    }
+    },
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "hidden": false,
+    "name": "Arthritis",
+    "description": "After years of shooting bows you have sacrificed agility for your greater strength and become immobile while shooting."
+}
