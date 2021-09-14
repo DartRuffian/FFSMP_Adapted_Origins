@@ -3,7 +3,7 @@
     "cold_time":{
 		"type": "origins:resource",
 		"min": 0,
-		"max": 1800,
+		"max": 3600,
 		"hud_render": {
 			"should_render": true,
 			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
@@ -30,7 +30,7 @@
 			"else_action": {
 					"type": "origins:change_resource",
 					"resource": "penglin:migrate_cold_time",
-					"change": -1800
+					"change": -3600
 			}
     	},
     	"interval": 20
@@ -42,7 +42,7 @@
  			"effect": {
     			"effect": "minecraft:hunger",
     			"duration": 20,
-    			"amplifier": 200
+    			"amplifier": 100
   			}
     	},
     	"interval": 20,
@@ -95,7 +95,7 @@
  			"effect": {
     			"effect": "minecraft:hunger",
     			"duration": 20,
-    			"amplifier": 200
+    			"amplifier": 100
   			}
     	},
     	"interval": 20,
