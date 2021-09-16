@@ -1,0 +1,8 @@
+{
+	"replace": true,
+	"origins": [
+		"koala:koala",
+		"koala:adapted_koala",
+		"koala:dropbear"
+	]
+}

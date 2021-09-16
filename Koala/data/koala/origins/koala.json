@@ -1,0 +1,11 @@
+{
+	"powers": [
+		"origins:climbing",
+		"origins:shulker_inventory"
+	],
+	"icon": "minecraft:bamboo",
+	"order": 8,
+	"impact": 3,
+	"name": "Koala",
+	"description": "An Origin for Smal Koalas"
+}
