@@ -1,0 +1,11 @@
+{
+	"powers": [
+		"origins:climbing",
+		"koala:koalas_pouch"
+	],
+	"icon": "minecraft:bamboo",
+	"order": 8,
+	"impact": 3,
+	"name": "Adapted Koala",
+	"description": "After crafting the best farming tool known to man you feel your natural abilities sharpen with it"
+}

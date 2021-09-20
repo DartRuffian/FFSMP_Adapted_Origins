@@ -1,0 +1,56 @@
+{
+    "type": "origins:self_action_on_kill",
+    "name": "Adaption",
+    "description": "You can evolve, following the path you want to choose. Whether by summoning the being of destruction and absorbing its potential or by using the best farming tool known to man to kill a pig, its your choice...",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [ 
+        {
+                 "type": "origins:execute_command",
+          "command": "origin set @s origins:origin koala:adapted_koala",
+          "permission_level": 4
+        },
+        {
+                 "type": "origins:execute_command",
+          "command": "playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run particle minecraft:flash ~ ~ ~ 0.3 0.3 0.3 0.8 10 force",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run particle minecraft:totem_of_undying ~ ~ ~ 0.3 0.3 0.3 0.8 10 force",
+          "permission_level": 4
+        }
+      ]
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    },
+    "damage_condition": {
+    "type": "origins:and",
+    "conditions": [
+    {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:netherite_hoe"
+                   }
+                }
+            }
+        }
+      ]
+    },
+    "target_condition": {
+    "type": "origins:entity_type",
+    "entity_type": "minecraft:pig"
+}
+}

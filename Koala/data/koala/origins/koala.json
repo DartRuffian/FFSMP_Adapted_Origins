@@ -1,11 +1,16 @@
 {
 	"powers": [
 		"origins:climbing",
-		"origins:shulker_inventory"
+		"koala:adaption"
 	],
 	"icon": "minecraft:bamboo",
 	"order": 8,
 	"impact": 3,
 	"name": "Koala",
-	"description": "An Origin for Smal Koalas"
+	"description": "Coming from Australia you are ready to hone your skills",
+		"upgrades":{
+		"conition": "minecraft:nether/summon_wither",
+		"origin": "koala:dropbear",
+		"announcement": "You have evolved... Best check your origin again..."
+		}
 }

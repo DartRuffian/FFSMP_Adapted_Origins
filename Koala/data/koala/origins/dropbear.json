@@ -1,0 +1,11 @@
+{
+	"powers": [
+		"origins:climbing",
+		"koala:koalas_pouch"
+	],
+	"icon": "minecraft:",
+	"order": 8,
+	"impact": 3,
+	"name": "Koala",
+	"description": "After summoning The Wither king of Australia 2, its energy overwhelmed you causing "
+		}

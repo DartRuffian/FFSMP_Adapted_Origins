@@ -1,0 +1,10 @@
+{
+    "type": "origins:inventory",
+    "drop_on_death": false,
+      "key": {
+          "key": "key.origins.secondary_active",
+          "continuous": false
+      },
+    "name": "Koalas Pouch",
+    "description": "After evolving you gain access to a secret pouch. Activate your secondary to use."
+  }
